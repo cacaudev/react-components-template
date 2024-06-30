@@ -8,9 +8,10 @@
 }
 
 .l-page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1f auto;
+  background-color: red;
 }
 
 .l-page__header {
@@ -23,6 +24,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .l-page__header__right-container {
   display: flex;
   flex-direction: row;
@@ -46,7 +48,7 @@
 }
 
 /* tablet breakpoint */
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
 }
 
 /* desktop breakpoint */
