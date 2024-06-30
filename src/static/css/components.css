@@ -29,18 +29,18 @@
 /* tablet breakpoint */
 @media (max-width: 1023px) {
   .c-home {
-    grid-template-columns: 1fr; /* One column for tablet */
-    gap: 10px;
-    overflow-y: auto;
+    grid-template-columns: 1fr; /* One column for tablet and mobile */
+    gap: 10px; /* rows gap */
+    overflow-y: auto; /* can scroll */
   }
 }
 
 /* desktop breakpoint */
 @media (min-width: 1024px) {
   .l-home__main-content {
-    overflow-y: auto;
+    overflow-y: auto; /* can scroll */
   }
   .l-home__right-sidebar {
-    overflow-y: auto;
+    overflow-y: auto; /* can scroll */
   }
 }
