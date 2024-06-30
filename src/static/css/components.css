@@ -1,0 +1,24 @@
+.c-home {
+  height:var(--page-content-height);
+  padding: var(--page-content-padding);
+
+  display: grid;
+  grid-template-columns:4fr 1fr;
+  gap: 10px;
+}
+
+.l-home__main-content {
+  background-color: black;
+}
+
+.l-home__right-sidebar {
+  background-color: blanchedalmond;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+}
