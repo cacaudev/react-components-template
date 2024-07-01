@@ -5,24 +5,6 @@
   background-color: red;
 }
 
-.l-page__header {
-  width: 100%;
-  height: var(--header-height);
-  padding: var(--page-content-padding);
-  
-  background-color: aliceblue;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.l-page__header__right-container {
-  display: flex;
-  flex-direction: row;
-  column-gap: 10px;
-}
-
 .l-page__content {
   width: 100%;
   height: var(--page-content-height);
@@ -40,9 +22,9 @@
 }
 
 /* tablet breakpoint */
-@media (max-width: var(--breakpoint-medium-max)) {
+@media (max-width: 1023px) {
 }
 
 /* desktop breakpoint */
-@media (min-width: var(--breakpoint-regular-min)) {
+@media (min-width: 1024px) {
 }
