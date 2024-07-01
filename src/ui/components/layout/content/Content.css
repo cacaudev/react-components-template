@@ -1,0 +1,12 @@
+.c-home__main-content {
+  background-color: black;
+  color: white;
+  padding: var(--page-content-padding);
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .c-home__main-content {
+    overflow-y: auto; /* can scroll */
+  }
+}
