@@ -7,7 +7,7 @@
   grid-template-columns: 3fr 1fr;
 }
 /* tablet breakpoint */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .c-home {
     grid-template-columns: 1fr; /* One column for tablet and mobile */
     gap: 10px; /* rows gap */

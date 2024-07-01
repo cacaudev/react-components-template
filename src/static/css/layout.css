@@ -1,16 +1,7 @@
-:root {
-  --header-height: 60px;
-  --footer-height: 50px;
-  --page-content-height: calc(
-    100vh - var(--footer-height) - var(--header-height)
-  );
-  --page-content-padding: 16px;
-}
-
 .l-page {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1f auto; /* 3 rows: header, content, footer. content is variable height */
+  grid-template-rows: auto 1f auto; /* 3 rows: header, content, footer. content has variable height */
   background-color: red;
 }
 
@@ -49,9 +40,9 @@
 }
 
 /* tablet breakpoint */
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-medium-max)) {
 }
 
 /* desktop breakpoint */
-@media (min-width: 1024px) {
+@media (min-width: var(--breakpoint-regular-min)) {
 }
