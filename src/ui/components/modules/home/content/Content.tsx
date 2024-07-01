@@ -4,7 +4,7 @@ import "./Content.css"
 const Content: React.FC = () => {
   return (
     <main className="c-home__main-content">
-      <h1>Content</h1>
+      <h1>Home Content</h1>
       <article className="c-article">
         <details>
           <summary>Article</summary>

@@ -1,0 +1,12 @@
+.c-navbar {
+    padding: var(--page-content-padding);
+    background-color: blanchedalmond;
+  }
+  
+  /* desktop breakpoint */
+  @media (min-width: 1024px) {
+    .c-navbar {
+      overflow-y: auto; /* can scroll */
+    }
+  }
+  

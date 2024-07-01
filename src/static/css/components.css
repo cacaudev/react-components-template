@@ -1,12 +1,3 @@
-.c-home {
-  height: var(--page-content-height);
-
-  display: grid;
-  /* 2 columns, page divided on 4 parts, first ocuppies 3 parts of width, second one, only one part */
-  /* content / right- sidebar */
-  grid-template-columns: 3fr 1fr;
-}
-
 .c-article {
   padding: 15px 0;
 }
@@ -17,11 +8,6 @@
 
 /* tablet breakpoint */
 @media (max-width: 1023px) {
-  .c-home {
-    grid-template-columns: 1fr; /* One column for tablet and mobile */
-    gap: 10px; /* rows gap */
-    overflow-y: auto; /* can scroll */
-  }
 }
 
 /* desktop breakpoint */

@@ -8,8 +8,7 @@ const Navbar: React.FC = () => {
       <Link to="/">Home</Link>
       </div>
       <div className="l-page__header__right-container">       
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </div>
     </header>
   );
