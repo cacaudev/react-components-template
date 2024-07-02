@@ -4,6 +4,7 @@ import "./DashboardContent.css";
 const DashboardContent: React.FC = () => {
   return (
     <main className="c-dashboard__main-content">
+      <div className="c-dashboard__container">
       <h1>Dashboard Content</h1>
       <article className="c-article">
         <details>
@@ -178,6 +179,7 @@ const DashboardContent: React.FC = () => {
           </p>
         </details>
       </article>
+      </div>
     </main>
   );
 };

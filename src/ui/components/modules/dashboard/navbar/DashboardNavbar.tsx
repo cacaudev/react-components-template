@@ -2,128 +2,112 @@ import React, { useState } from "react";
 import "./DashboardNavbar.css";
 
 const DashboardNavbar: React.FC = () => {
-  const [closed, setClosed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [active, setActive] = useState("Dashboard");
 
   const handleSidebar = () => {
-    setClosed(!closed);
+    setIsCollapsed(!isCollapsed);
   };
   const handleNavItemActive = (nameNavItem: string) => {
     setActive(nameNavItem);
   };
 
   return (
-    <div className={`c-navbar ${closed ? "c-navbar--is-closed" : ""}`}>
-      <div className="c-navbar__header">
-        <div className={`c-navbar__toggle-button ${closed ? "c-navbar__toggle-button--is-closed" : ""}`}
-        onClick={handleSidebar}></div>
+    <aside className={`c-sidebar ${isCollapsed ? "c-sidebar--isCollapsed" : ""}`}>
+      <div className="c-sidebar__header">
+        <button onClick={handleSidebar}>Toggle</button>
       </div>
-      <div className="c-navbar__menu">
-        <ul className="c-navbar__container top">
-          <li className="c-navbar__nav-item c-navbar__nav-item--is-active">
-            <a
-              href="#"
-              className="c-navbar__nav-link c-navbar__nav-link--is-active"
-            >
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+      <div className="c-sidebar__menu">
+        <ul className="c-sidebar__container top">
+          <li className="c-sidebar__nav-item c-nav-item--is-active">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                 </svg>
               </div>
-              {!closed ? "Dashboard" : ""}
+              <span className="c-nav-item__title">Dashboard</span>
             </a>
           </li>
-          <li className="c-navbar__nav-item">
-            <a href="#" className="c-navbar__nav-link">
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <li className="c-sidebar__nav-item">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
                 </svg>
               </div>
-              {!closed ? <span>Analytics</span> : <></>}
+              <span className="c-nav-item__title"> Analytics</span>
             </a>
           </li>
-          <li className="c-navbar__nav-item">
-            <a href="#" className="c-navbar__nav-link">
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <li className="c-sidebar__nav-item">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" />
                 </svg>
               </div>
-              {!closed ? <span>CRM</span> : <></>}
+              <span className="c-nav-item__title"> CRM</span>
             </a>
           </li>
-          <li className="c-navbar__nav-item">
-            <a href="#" className="c-navbar__nav-link">
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <li className="c-sidebar__nav-item">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H288c-10.1 0-19.6-4.7-25.6-12.8L243.2 57.6C231.1 41.5 212.1 32 192 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z" />
                 </svg>
               </div>
-              {!closed ? <span>Projects</span> : <></>}
+              <span className="c-nav-item__title">Projects</span>
             </a>
           </li>
         </ul>
-        <ul className="c-navbar__container">
-          <li className="c-navbar__nav-item">
-            <a href="#" className="c-navbar__nav-link">
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <ul className="c-sidebar__container">
+          <li className="c-sidebar__nav-item">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
                 </svg>
               </div>
-              {!closed ? <span>Change Theme</span> : <></>}
+              <span className="c-nav-item__title">Change Theme</span>
             </a>
           </li>
-          <li className="c-navbar__nav-item">
-            <a href="#" className="c-navbar__nav-link">
-              <div
-                style={{
-                  color: "red",
-                  width: "1em",
-                  height: "1em",
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <li className="c-sidebar__nav-item">
+            <a href="#" className="c-sidebar__nav-link">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="c-nav-item__icon"
+                >
                   <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
                 </svg>
               </div>
-              {!closed ? <span>Logout</span> : <></>}
+              <span className="c-nav-item__title">Logout</span>
             </a>
           </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 

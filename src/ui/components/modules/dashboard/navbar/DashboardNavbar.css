@@ -1,45 +1,26 @@
-.c-navbar {
+.c-sidebar {
   padding: var(--page-content-padding);
   background-color: blanchedalmond;
   width: var(--left-sidebar-width);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   left: 0;
   transition: all 0.3s ease;
+  position: relative;
+
+  &.c-sidebar--isCollapsed {
+    width: 80px;
+  }
 }
 
-.c-navbar--is-closed {
-  width: 80px;
-}
-
-.c-navbar__header {
+.c-sidebar__header {
   position: relative;
 }
-.c-navbar__toggle-button {
-  position: absolute;
-  top: 10px;
-  right: -136px;
-  transform: translateY(-50%) rotate(180deg);
-  height: 25px;
-  width: 25px;
-  background-color: #695cfe;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 200;
-}
-.c-navbar__toggle-button--is-closed {
-  right: -52px;
-}
 
-.c-navbar__menu {
+.c-sidebar__menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,7 +28,7 @@
   height: calc(100% - 20px);
 }
 
-.c-navbar__container {
+.c-sidebar__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,43 +37,63 @@
   gap: 10px;
   overflow-y: auto;
   cursor: pointer;
-  &_.top {
+  width: auto;
+  overflow-x: hidden;
+  
+  &.top {
     margin-top: 40px;
   }
 }
 
-.c-navbar__nav-item {
+.c-sidebar__nav-item {
   width: 100%;
   padding: 10px 15px;
   border-radius: 4px;
 }
-.c-navbar__nav-item:hover {
+.c-nav-item--is-active.c-sidebar__nav-item {
   background-color: aquamarine;
 }
-.c-navbar__nav-item--is-active {
+.c-sidebar__nav-item:hover {
   background-color: aquamarine;
 }
 
-.c-navbar__nav-link {
+.c-sidebar__nav-link {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
   flex-wrap: nowrap;
   gap: 10px;
-  white-space: nowrap;
   text-decoration: none;
   height: 20px;
+  white-space: nowrap;
+}
+.c-sidebar--isCollapsed .c-sidebar__nav-link {
+  overflow: hidden;
+}
+
+.c-nav-item__icon {
+  fill: black;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.2em;
+}
+
+.c-nav-item__title {
   color: black;
   font-weight: 400;
+  opacity: 1;
 }
-.c-navbar__nav-link--is-active {
+.c-nav-item--is-active .c-nav-item__title {
   font-weight: 600;
+}
+.c-sidebar--isCollapsed .c-nav-item__title {
+  opacity: 0;
 }
 
 /* desktop breakpoint */
 @media (min-width: 1024px) {
-  .c-navbar {
+  .c-sidebar {
     overflow-y: auto; /* can scroll */
   }
 }
