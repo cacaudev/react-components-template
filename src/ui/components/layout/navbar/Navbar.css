@@ -1,12 +1,13 @@
 .l-page__header {
   width: 100%;
-  min-height: var(--header-height);
+  height: var(--header-height);
   position: sticky;
   top: 0;
   background-color: aliceblue;
-  box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+  box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.25);
   border-bottom: 0px solid #dee2e6;
   transition: all 0.25s ease-in-out;
+  z-index:100;
 }
 
 .l-page__header__container {

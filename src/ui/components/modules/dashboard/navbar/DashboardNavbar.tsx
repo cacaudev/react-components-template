@@ -1,13 +1,30 @@
-import React from "react";
-import './DashboardNavbar.css'
+import React, { useState } from "react";
+import "./DashboardNavbar.css";
 
 const DashboardNavbar: React.FC = () => {
-    return (
-      <div className="c-navbar">
-        <h1>Dashboard Navbar</h1>
-      </div>
-    );
+  const [closed, setClosed] = useState(false);
+  const handleSidebar = () => {
+    setClosed(!closed);
   };
-  
-  export { DashboardNavbar };
-  
+
+  return (
+    <div className={`c-navbar ${closed ? "closed" : ""}`}>
+      <div className="c-navbar__header">
+        <button onClick={handleSidebar}>{closed ? "Open" : "Close"}</button>
+        <p>Back</p>
+      </div>
+      <div className="c-navbar__menu">
+        <div className="c-navbar__top-container">
+          <p>Dashboard</p>
+          <p>Analytics</p>
+        </div>
+        <div className="c-navbar__bottom-container">
+          <p>Change Theme</p>
+          <p>Logout</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { DashboardNavbar };

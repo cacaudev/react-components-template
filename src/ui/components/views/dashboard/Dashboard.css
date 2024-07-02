@@ -4,13 +4,11 @@
   display: grid;
   /* 2 columns, page divided on 4 parts, second ocuppies 3 parts of width, first one, only one part */
   /* left-sidebar / content */
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 3fr;
 }
 /* tablet breakpoint */
 @media (max-width: 1024px) {
   .c-dashboard {
-    grid-template-columns: 1fr; /* One column for tablet and mobile */
-    gap: 10px; /* rows gap */
     overflow-y: auto; /* can scroll */
   }
 }

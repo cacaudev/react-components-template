@@ -2,6 +2,8 @@
     background-color: black;
     color: white;
     padding: var(--page-content-padding);
+    width: 100%;
+    transition: all 0.3s ease;
   }
   
   /* desktop breakpoint */

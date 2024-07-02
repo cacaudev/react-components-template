@@ -1,24 +1,11 @@
 .l-page {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1f auto; /* 3 rows: header, content, footer. content has variable height */
+  min-height: 100%;
   background-color: red;
 }
 
 .l-page__content {
   width: 100%;
   height: var(--page-content-height);
-}
-
-.l-page__footer {
-  width: 100%;
-  height: var(--footer-height);
-  padding: var(--page-content-padding);
-  background-color: cadetblue;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* tablet breakpoint */

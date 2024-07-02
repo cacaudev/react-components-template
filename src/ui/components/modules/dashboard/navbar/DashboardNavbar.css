@@ -1,12 +1,46 @@
 .c-navbar {
-    padding: var(--page-content-padding);
-    background-color: blanchedalmond;
+  padding: var(--page-content-padding);
+  background-color: blanchedalmond;
+  width: var(--left-sidebar-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.closed {
+  width: 80px;
+}
+
+.c-navbar__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 30px);
+}
+
+.c-navbar__top-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.c-navbar__bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .c-navbar {
+    overflow-y: auto; /* can scroll */
   }
-  
-  /* desktop breakpoint */
-  @media (min-width: 1024px) {
-    .c-navbar {
-      overflow-y: auto; /* can scroll */
-    }
-  }
-  
+}

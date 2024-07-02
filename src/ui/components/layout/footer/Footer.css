@@ -1,0 +1,10 @@
+.l-page__footer {
+  width: 100%;
+  height: var(--footer-height);
+  padding: var(--page-content-padding);
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

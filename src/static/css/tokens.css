@@ -6,6 +6,7 @@
     100vh - var(--footer-height) - var(--header-height)
   );
   --page-content-padding: 16px;
+  --left-sidebar-width: 250px;
 
   /* Core units */
   --base-unit: 0.25rem;
