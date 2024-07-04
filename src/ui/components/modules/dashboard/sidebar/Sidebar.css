@@ -92,15 +92,19 @@
 .c-nav-collapsed .c-nav-item__title {
   opacity: 0;
 }
+.l-page .c-sidebar .c-nav-collapsed {
+  position: absolute;
+  width: var(--left-sidebar-width-sm);
+}
+
+.is-tablet .c-sidebar {
+  opacity: 0;
+  margin-left: calc(var(--left-sidebar-width)*-1)
+}
 
 /* desktop breakpoint */
 @media (min-width: 1024px) {
   .c-sidebar {
     overflow-y: auto; /* can scroll */
   }
-}
-
-.l-page .c-sidebar .c-nav-collapsed {
-  position: absolute;
-  width: var(--left-sidebar-width-sm);
 }
