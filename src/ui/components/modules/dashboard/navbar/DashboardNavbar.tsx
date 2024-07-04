@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./DashboardNavbar.css";
+import { useSidebarContext } from "../../../../../infra/controllers/context/SidebarToggleContext";
 
 const DashboardNavbar: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [active, setActive] = useState("Dashboard");
+  const { setSidebarToggle, sidebarToggle } = useSidebarContext();
 
   const handleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    setSidebarToggle();
   };
   const handleNavItemActive = (nameNavItem: string) => {
     setActive(nameNavItem);
   };
 
   return (
-    <aside className={`c-sidebar ${isCollapsed ? "c-sidebar--isCollapsed" : ""}`}>
+    <aside className={`c-sidebar ${sidebarToggle ? "c-sidebar--isCollapsed" : ""}`}>
       <div className="c-sidebar__header">
         <button onClick={handleSidebar}>Toggle</button>
       </div>
