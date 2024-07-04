@@ -21,7 +21,10 @@ const SidebarToggleProvider: React.FC<Props> = ({ children }) => {
   };
   return (
     <SidebarContext.Provider
-      value={{ sidebarToggle: sidebarToggle, setSidebarToggle: handleToggle }}
+      value={{
+        sidebarToggle: sidebarToggle,
+        setSidebarToggle: handleToggle,
+      }}
     >
       {children}
     </SidebarContext.Provider>
