@@ -1,10 +1,8 @@
 .c-dashboard {
   height: var(--page-content-height);
-
-  display: grid;
+  width: 100%;
   /* 2 columns, page divided on 4 parts, second ocuppies 3 parts of width, first one, only one part */
   /* left-sidebar / content */
-  grid-template-columns: auto 3fr;
 }
 /* tablet breakpoint */
 @media (max-width: 1024px) {

@@ -2,13 +2,19 @@
   background-color: white;
   color: black;
   padding: var(--page-content-padding);
-  width: 100%;
+  margin-left: var(--left-sidebar-width);
+  width: calc(100% - var(--left-sidebar-width));
   transition: all 0.3s ease;
   overflow-y: scroll;
+  position: relative;
 }
 
 .c-dashboard__container {
   padding: 10px;
+}
+.c-nav-collapsed .c-dashboard__main-content {
+  margin-left: var(--left-sidebar-width-sm);
+  width: calc(100% - var(--left-sidebar-width-sm));
 }
 
 /* tablet breakpoint */

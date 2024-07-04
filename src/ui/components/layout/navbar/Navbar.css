@@ -7,7 +7,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-bottom: 0px solid #dee2e6;
   transition: all 0.25s ease-in-out;
-  z-index: 100;
+  z-index: 1005;
 }
 
 .c-topnavbar__container {

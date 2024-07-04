@@ -8,8 +8,13 @@
   height: var(--page-content-height);
 }
 
+/* mobile breakpoint */
+@media (max-width: 480px) {
+  
+}
+
 /* tablet breakpoint */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
 }
 
 /* desktop breakpoint */

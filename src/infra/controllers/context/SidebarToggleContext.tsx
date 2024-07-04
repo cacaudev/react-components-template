@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 interface ISidebarContext {
-  sidebarToggle: boolean;
+  isSidebarCollapsed: boolean;
   setSidebarToggle: () => void;
 }
 interface Props {
@@ -9,12 +9,12 @@ interface Props {
 }
 
 const SidebarContext = createContext<ISidebarContext>({
-  sidebarToggle: true,
+  isSidebarCollapsed: true,
   setSidebarToggle: () => {},
 });
 
 const SidebarToggleProvider: React.FC<Props> = ({ children }) => {
-  const [sidebarToggle, setSidebarToggle] = useState(true);
+  const [isSidebarCollapsed, setSidebarToggle] = useState(true);
 
   const handleToggle = () => {
     setSidebarToggle((prevState) => !prevState);
@@ -22,7 +22,7 @@ const SidebarToggleProvider: React.FC<Props> = ({ children }) => {
   return (
     <SidebarContext.Provider
       value={{
-        sidebarToggle: sidebarToggle,
+        isSidebarCollapsed: isSidebarCollapsed,
         setSidebarToggle: handleToggle,
       }}
     >

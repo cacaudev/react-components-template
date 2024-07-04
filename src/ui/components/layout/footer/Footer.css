@@ -1,5 +1,4 @@
 .l-page__footer {
-  width: 100%;
   height: var(--footer-height);
   padding: var(--page-content-padding);
   background-color: cadetblue;
@@ -7,4 +6,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-left: var(--left-sidebar-width);
+  width: calc(100% - var(--left-sidebar-width));
+  transition: all 0.3s ease;
+}
+
+.c-nav-collapsed .l-page__footer {
+  margin-left: var(--left-sidebar-width-sm);
+  width: calc(100% - var(--left-sidebar-width-sm));
 }

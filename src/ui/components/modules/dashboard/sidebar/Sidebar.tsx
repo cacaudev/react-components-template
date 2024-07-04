@@ -4,8 +4,8 @@ import { useSidebarContext } from "../../../../../infra/controllers/context/Side
 
 const DashboardSidebar: React.FC = () => {
   const [active, setActive] = useState("Dashboard");
-  const { setSidebarToggle, sidebarToggle } = useSidebarContext();
-
+  const { setSidebarToggle } = useSidebarContext();
+  
   const handleSidebar = () => {
     setSidebarToggle();
   };
@@ -14,7 +14,7 @@ const DashboardSidebar: React.FC = () => {
   };
 
   return (
-    <aside className={`c-sidebar ${sidebarToggle ? "c-sidebar--isCollapsed" : ""}`}>
+    <aside className={'c-sidebar'}>
       <div className="c-sidebar__header">
         <button onClick={handleSidebar}>Toggle</button>
       </div>
