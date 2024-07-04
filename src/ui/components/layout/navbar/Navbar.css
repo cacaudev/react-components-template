@@ -1,4 +1,4 @@
-.l-page__header {
+.l-header {
   width: 100%;
   height: var(--header-height);
   position: sticky;
@@ -10,7 +10,7 @@
   z-index:100;
 }
 
-.l-page__header__container {
+.l-header__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,7 +21,7 @@
   -webkit-box-align: center;
 }
 
-.l-page__header__left-content {
+.l-header__left-content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,7 +29,7 @@
   gap: 1rem;
 }
 
-.l-page__header__right-content {
+.l-header__right-content {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -37,3 +37,4 @@
   align-items: center;
   -webkit-box-align: center !important;
 }
+

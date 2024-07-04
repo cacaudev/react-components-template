@@ -4,16 +4,16 @@ import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   return (
-    <header className="l-page__header">
-      <div className="l-page__header__container">
-        <div className="l-page__header__left_content">
+    <header className="l-header">
+      <div className="l-header__container">
+        <div className="l-header__left_content">
           <Link to="/">
-            <div className="l-page__header__logo">
+            <div className="l-header__logo">
               <img src="logo-dark.png" />
             </div>
           </Link>
         </div>
-        <ul className="l-page__header__right-content">
+        <ul className="l-header__right-content">
           <li>
             <div
               style={{ color: 'red', width: "1em", height: "1em", verticalAlign: "-0.125em" }}

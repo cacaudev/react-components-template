@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./DashboardNavbar.css";
+import "./Sidebar.css";
 import { useSidebarContext } from "../../../../../infra/controllers/context/SidebarToggleContext";
 
-const DashboardNavbar: React.FC = () => {
+const DashboardSidebar: React.FC = () => {
   const [active, setActive] = useState("Dashboard");
   const { setSidebarToggle, sidebarToggle } = useSidebarContext();
 
@@ -112,4 +112,4 @@ const DashboardNavbar: React.FC = () => {
   );
 };
 
-export { DashboardNavbar };
+export { DashboardSidebar };
