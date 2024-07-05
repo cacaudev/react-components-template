@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { useSidebarContext } from "../../../../infra/controllers/context/SidebarToggleContext";
+import { useSidebarContext } from "@state/context/SidebarToggleContext";
 
 const Navbar: React.FC = () => {
   const { setSidebarToggle } = useSidebarContext();
-
-  const handleSidebar = () => {
-    setSidebarToggle();
-  };
 
   return (
     <header className="c-topnavbar">

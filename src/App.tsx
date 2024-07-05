@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./ui/components/layout/navbar/Navbar";
-import { Home } from "./ui/components/views/home/Home";
-import { Footer } from "./ui/components/layout/footer/Footer";
-import { Dashboard } from "./ui/components/views/dashboard/Dashboard";
-import { useSidebarContext } from "./infra/controllers/context/SidebarToggleContext";
-import useResponsiveWidth from "./infra/hooks/WindowDimensionsHook";
+import Navbar from "@layout/navbar/Navbar";
+import { Footer } from "@layout/footer/Footer";
+import { useSidebarContext } from "@state/context/SidebarToggleContext";
+import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
+import { Home } from "@pages/home/Home";
+import { Dashboard } from "@pages/dashboard/Dashboard";
 
 function App() {
   const { isSidebarCollapsed } = useSidebarContext();

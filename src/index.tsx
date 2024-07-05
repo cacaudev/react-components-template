@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "../src/static/css/main.css";
+import "@styles/main.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { SidebarToggleProvider } from "./infra/controllers/context/SidebarToggleContext";
+import { SidebarToggleProvider } from "@state/context/SidebarToggleContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

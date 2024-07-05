@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import { useSidebarContext } from "../../../../../infra/controllers/context/SidebarToggleContext";
+import { useSidebarContext } from "@state/context/SidebarToggleContext";
 
 const DashboardSidebar: React.FC = () => {
   const [active, setActive] = useState("Dashboard");
