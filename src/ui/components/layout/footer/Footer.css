@@ -9,14 +9,17 @@
   margin-left: 0px;
   width: 100%;
   transition: all 0.3s ease;
+  bottom: 0;
+  position: fixed;
 }
 
-.c-dashboard .l-page__footer {
+.l-page.c-sidebar--open .l-page__footer {
   margin-left: var(--left-sidebar-width);
   width: calc(100% - var(--left-sidebar-width));
 }
 
-.c-nav-collapsed .c-dashboard .l-page__footer {
+.l-page.c-sidebar--collapsed .l-page__footer {
   margin-left: var(--left-sidebar-width-sm);
   width: calc(100% - var(--left-sidebar-width-sm));
 }
+

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./TopNavbar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 
-const Navbar: React.FC = () => {
+const TopNavbar: React.FC = () => {
   const { setSidebarToggle } = useSidebarContext();
 
   return (
@@ -52,4 +52,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default TopNavbar;

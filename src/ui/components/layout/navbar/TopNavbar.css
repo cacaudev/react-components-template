@@ -48,8 +48,8 @@
   -webkit-box-align: center !important;
 }
 
-/* desktop breakpoint */
-@media (max-width: 480px) {
+/* tablet breakpoint */
+@media (max-width: 768px) {
   .c-topnavbar__bars-icon {
     visibility: visible;
   }

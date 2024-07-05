@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "@layout/navbar/Navbar";
+import TopNavbar from "@layout/navbar/TopNavbar";
 import { Footer } from "@layout/footer/Footer";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
       <div
-        className={`l-page ${isSidebarCollapsed ? "c-nav-collapsed" : ""} ${useResponsiveWidth() < 768 ? 'is-tablet' : ''}`}
+        className={`l-page ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} ${useResponsiveWidth() < 768 ? 'is-tablet' : ''}`}
       >
-        <Navbar />
+        <TopNavbar />
         <div className="l-page__content">
           <Routes>
             <Route path="/" element={<Home />} />

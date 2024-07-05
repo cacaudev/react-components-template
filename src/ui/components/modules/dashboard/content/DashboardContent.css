@@ -2,8 +2,8 @@
   background-color: white;
   color: black;
   padding: var(--page-content-padding);
-  margin-left: var(--left-sidebar-width);
-  width: calc(100% - var(--left-sidebar-width));
+  margin-left: 0px;
+  width: 100%;
   transition: all 0.3s ease;
   overflow-y: scroll;
   position: relative;
@@ -12,9 +12,15 @@
 .c-dashboard__container {
   padding: 10px;
 }
-.c-nav-collapsed .c-dashboard__main-content {
+
+.c-sidebar--collapsed .c-dashboard__main-content {
   margin-left: var(--left-sidebar-width-sm);
   width: calc(100% - var(--left-sidebar-width-sm));
+}
+
+.c-sidebar--open .c-dashboard__main-content {
+  margin-left: var(--left-sidebar-width);
+  width: calc(100% - var(--left-sidebar-width));
 }
 
 /* tablet breakpoint */
