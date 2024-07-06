@@ -1,0 +1,7 @@
+enum THEMES_AVAILABLE {
+  DARK_THEME = "dark-theme",
+  LIGHT_THEME = "light-theme",
+}
+const DEFAULT_THEME = THEMES_AVAILABLE.DARK_THEME;
+
+export { THEMES_AVAILABLE, DEFAULT_THEME };

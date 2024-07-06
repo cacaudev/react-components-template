@@ -26,13 +26,14 @@ const SidebarMenu: React.FC<Props> = (props: Props) => {
   return (
     <div className="c-sidebar__menu">
       <ul className="c-sidebar__container top">
-        {props.menuItems.map((item) => (
+        {props.menuItems.map((item, index) => (
           <SidebarMenuItem
             icon={item.icon}
             isActive={activeItem === item.title}
             title={item.title}
             link={item.link}
             itemClickedCallback={handleItemSelection}
+            key={`sidebar-menu-${index}`}
           />
         ))}
       </ul>

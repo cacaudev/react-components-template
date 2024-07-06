@@ -20,6 +20,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
+      "@domain/*": ["./src/domain/*"],
       "@layout/*": ["./src/ui/components/layout/*"],
       "@modules/*": ["./src/ui/components/modules/*"],
       "@design-system/*": ["./src/ui/design-system/*"],
