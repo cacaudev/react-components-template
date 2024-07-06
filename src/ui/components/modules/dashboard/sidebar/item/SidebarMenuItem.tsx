@@ -21,8 +21,6 @@ const SidebarMenuItem: React.FC<Props> = (props: Props) => {
   }, [props]);
 
   const handleClick = (e: any, itemTitle: string) => {
-    console.log("menu item clicked ", itemTitle);
-
     e.preventDefault();
     props.itemClickedCallback(itemTitle);
   };

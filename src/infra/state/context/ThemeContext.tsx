@@ -1,57 +1,56 @@
-import { DEFAULT_THEME, THEMES_AVAILABLE } from "@domain/style/theme/Theme";
+import { ThemeManager, THEMES_AVAILABLE } from "@domain/style/ThemeManager";
+import { ThemeStorage } from "@state/storage/ThemeStorage";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface IThemeContext {
-  theme: string;
-  setTheme: () => void;
+  theme: THEMES_AVAILABLE;
+  toggleTheme: () => void;
 }
 interface Props {
   children: React.ReactNode;
 }
 
-const getThemeFromLocalStorage = () => {
-  const theme = localStorage.getItem("theme");
-  const themesAvailable = Object.values(THEMES_AVAILABLE).map((item) =>
-    item.toString()
-  );
-
-  if (!theme || themesAvailable.includes(theme)) {
-    localStorage.setItem("theme", DEFAULT_THEME);
-    return DEFAULT_THEME;
-  } else {
-    return theme;
-  }
-};
-
 const ThemeContext = createContext<IThemeContext>({
-  theme: DEFAULT_THEME,
-  setTheme: () => {},
+  theme: ThemeManager.getDefault(),
+  toggleTheme: () => {},
 });
 
+const defaultTheme = ThemeStorage.getCurrentTheme();
+
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage);
+  const [theme, setTheme] = useState(defaultTheme);
 
-  const changeThemeOnLocalStorage = () => {
-    localStorage.setItem("theme", theme);
+  const handleThemeChange = (theme: THEMES_AVAILABLE) => {
+    ThemeStorage.setTheme(theme);
   };
 
-  const handleThemeState = () => {
-    if (theme === "dark-theme") {
-      setTheme("light-theme");
-    } else {
-      setTheme("dark-theme");
+  const toggleTheme = () => {
+    let newTheme = theme;
+    if (theme == THEMES_AVAILABLE.DARK_THEME) {
+      newTheme = THEMES_AVAILABLE.LIGHT_THEME;
+    } else if (theme == THEMES_AVAILABLE.LIGHT_THEME) {
+      newTheme = THEMES_AVAILABLE.DARK_THEME;
     }
+
+    /**
+     * Update theme stage and theme on local storage
+     */
+    setTheme(newTheme);
+    handleThemeChange(newTheme);
   };
 
+  /**
+   * Set default theme on provider component mount
+   */
   useEffect(() => {
-    changeThemeOnLocalStorage();
-  }, [theme]);
+    handleThemeChange(theme);
+  }, []);
 
   return (
     <ThemeContext.Provider
       value={{
         theme: theme,
-        setTheme: handleThemeState,
+        toggleTheme: toggleTheme,
       }}
     >
       {children}

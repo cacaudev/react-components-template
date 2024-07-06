@@ -5,13 +5,14 @@ import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { Home } from "@pages/home/Home";
 import { Dashboard } from "@pages/dashboard/Dashboard";
 import { useThemeContext } from "@state/context/ThemeContext";
+import { ThemeManager } from "@domain/style/ThemeManager";
 
 function App() {
   const { isSidebarCollapsed } = useSidebarContext();
   const {theme} = useThemeContext();
 
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App ${ThemeManager.getThemeValue(theme)}`}>
       <div
         className={`l-page 
           ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} 

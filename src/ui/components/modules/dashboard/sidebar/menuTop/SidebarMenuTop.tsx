@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { SidebarMenuItem } from "../item/SidebarMenuItem";
-import { LogoutIcon } from "@assets/icons/svg/Logout";
-import { ThemeIcon } from "@assets/icons/svg/Theme";
 import "./SidebarMenuTop.css";
 
 interface Props {
