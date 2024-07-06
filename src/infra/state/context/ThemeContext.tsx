@@ -1,4 +1,4 @@
-import { DEFAULT_THEME, THEMES_AVAILABLE } from "@domain/theme/Theme";
+import { DEFAULT_THEME, THEMES_AVAILABLE } from "@domain/style/theme/Theme";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface IThemeContext {

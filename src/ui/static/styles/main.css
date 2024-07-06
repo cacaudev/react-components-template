@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700;800&display=swap");
 
-@import url("tokens.css");
-@import url("base.css");
-@import url("layout.css");
-@import url("components.css");
+@import url("Base.css");
+@import url("../../../domain/style/tokens/Tokens.css");
+@import url("../../../domain/style/theme/Themes.css");
+@import url("Breakpoints.css");
+@import url("Global.css");
+@import url("Transitions.css");
+@import url("Layout.css");
+@import url("Components.css");

@@ -1,0 +1,16 @@
+:root {
+  --text-primary-light: black;
+  --text-secondary-light: rgb(70, 70, 70);
+  --bg-primary-light: white;
+  --bg-secondary-light: rgb(212, 212, 212);
+  --bg-navbar-light: rgb(104, 104, 255);
+}
+
+
+.light-theme {
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --bg-navbar: var(--bg-navbar-light);
+}

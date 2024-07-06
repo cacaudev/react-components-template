@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "@styles/main.css";
+import "@styles/Main.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { SidebarToggleProvider } from "@state/context/SidebarToggleContext";

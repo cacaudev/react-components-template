@@ -1,0 +1,5 @@
+:root {
+  /* Core units */
+  --base-unit: 0.25rem;
+  --base-half-unit: calc(var(--base-unit) / 2);
+} 

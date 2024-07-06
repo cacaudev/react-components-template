@@ -1,0 +1,14 @@
+:root {
+    --text-primary-dark: white;
+    --text-secondary-dark: rgb(160, 160, 160);
+    --bg-primary-dark: black;
+    --bg-secondary-dark: rgb(34, 34, 34);
+    --bg-navbar-dark: rgb(29, 29, 58);
+  }
+  .dark-theme {
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --bg-primary: var(--bg-primary-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --bg-navbar: var(--bg-navbar-dark);
+  }
