@@ -29,7 +29,7 @@ const SidebarMenuItem: React.FC<Props> = (props: Props) => {
 
   return (
     <li
-      className={`c-sidebar__nav-item ${CustomValidator.isValueValid(props.isActive) && "c-sidebar-item--is-active"} `}
+      className={`c-sidebar__nav-item ${props.isActive && "c-sidebar-item--is-active"} `}
       onClick={(e) => handleClick(e, props.title)}
     >
       <a
