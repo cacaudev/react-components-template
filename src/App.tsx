@@ -10,7 +10,10 @@ function App() {
   return (
     <div className="App">
       <div
-        className={`l-page ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} ${useResponsiveWidth() < 768 ? 'is-tablet' : ''}`}
+        className={`l-page 
+          ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} 
+          ${useResponsiveWidth() < 768 ? 'hide-sidebar': ''}`
+        }
       >
         <TopNavbar />
         <div className="l-page__content">
