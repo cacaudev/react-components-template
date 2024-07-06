@@ -6,6 +6,7 @@
 .l-page__content {
   width: 100%;
   height: var(--page-content-height);
+  margin-top: var(--header-height);
 }
 
 /* mobile breakpoint */

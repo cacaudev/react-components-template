@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import TopNavbar from "@layout/navbar/TopNavbar";
-import { Footer } from "@layout/footer/Footer";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { Home } from "@pages/home/Home";
@@ -20,7 +19,6 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
-        <Footer />
       </div>
     </div>
   );

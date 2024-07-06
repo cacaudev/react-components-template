@@ -1,7 +1,7 @@
 .c-topnavbar {
   width: 100%;
   height: var(--header-height);
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: aliceblue;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
