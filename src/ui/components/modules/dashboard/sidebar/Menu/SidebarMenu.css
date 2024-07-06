@@ -1,0 +1,24 @@
+.c-sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
+.c-sidebar__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  list-style-type: none;
+  gap: 10px;
+  overflow-y: auto;
+  cursor: pointer;
+  width: auto;
+  overflow-x: hidden;
+
+  &.top {
+    margin-top: 40px;
+  }
+}

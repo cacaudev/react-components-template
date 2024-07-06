@@ -1,53 +1,51 @@
 import React, { useState } from "react";
-import { SidebarMenuItem } from "./SidebarMenuItem";
-import { HomeIcon } from "@assets/icons/svg/Home";
-import { AnalyticsIcon } from "@assets/icons/svg/Analytics";
-import { CRMIcon } from "@assets/icons/svg/CRM";
+import { SidebarMenuItem } from "../item/SidebarMenuItem";
 import { LogoutIcon } from "@assets/icons/svg/Logout";
-import { ProjectsIcon } from "@assets/icons/svg/Projects";
 import { ThemeIcon } from "@assets/icons/svg/Theme";
+import './SidebarMenu.css';
 
-const SidebarMenu: React.FC = () => {
+interface Props {
+  menuItems: {
+    title: string;
+    icon: React.ReactNode;
+    link: string;
+  }[];
+}
+
+const SidebarMenu: React.FC<Props> = (props: Props) => {
+  const [activeItem, setActiveItem] = useState(props.menuItems[0].title);
+
+  const handleItemSelection = (itemTitle: string) => {
+    // TODO: remove buttons that are not views links
+    const titles = props.menuItems.map((item) => item.title);
+    if (titles.includes(itemTitle)) {
+      setActiveItem(itemTitle);
+    }
+  };
+
   return (
     <div className="c-sidebar__menu">
       <ul className="c-sidebar__container top">
-        <SidebarMenuItem
-          icon={<HomeIcon />}
-          isActive={true}
-          title={"Dashboard"}
-          link=""
-        />
-        <SidebarMenuItem
-          icon={<AnalyticsIcon />}
-          isActive={false}
-          title={"Analytics"}
-          link="#"
-        />
-        <SidebarMenuItem
-          icon={<CRMIcon />}
-          isActive={false}
-          title={"CRM"}
-          link="#"
-        />
-        <SidebarMenuItem
-          icon={<ProjectsIcon />}
-          isActive={false}
-          title={"Projects"}
-          link="#"
-        />
+        {props.menuItems.map((item) => (
+          <SidebarMenuItem
+            icon={item.icon}
+            isActive={activeItem === item.title}
+            title={item.title}
+            link={item.link}
+            itemClickedCallback={handleItemSelection}
+          />
+        ))}
       </ul>
       <ul className="c-sidebar__container">
         <SidebarMenuItem
           icon={<ThemeIcon />}
-          isActive={false}
           title={"Change Theme"}
-          link="#"
+          itemClickedCallback={handleItemSelection}
         />
         <SidebarMenuItem
           icon={<LogoutIcon />}
-          isActive={false}
           title={"Logout"}
-          link="#"
+          itemClickedCallback={handleItemSelection}
         />
       </ul>
     </div>
