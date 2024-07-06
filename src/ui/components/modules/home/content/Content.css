@@ -1,7 +1,8 @@
 .c-home__main-content {
-  background-color: black;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   padding: var(--page-content-padding);
+  height: inherit;
 }
 
 /* desktop breakpoint */
