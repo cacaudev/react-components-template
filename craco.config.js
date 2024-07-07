@@ -9,8 +9,15 @@ module.exports = {
       "@design-system": path.resolve(__dirname, "./src/ui/design-system"),
       "@pages": path.resolve(__dirname, "./src/infra/routing/pages"),
       "@state": path.resolve(__dirname, "./src/infra/state"),
-      "@styles": path.resolve(__dirname, "./src/ui/static/styles"),
-      "@assets": path.resolve(__dirname, "./src/ui/static/assets"),
+      "@styles": path.resolve(__dirname, "./src/static/styles"),
+      "@icons": path.resolve(__dirname, "./src/static/icons"),
     },
+    configure: (config, { env, paths }) => {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ["@svgr/webpack"]
+      });
+      return config;
+    }
   },
 };

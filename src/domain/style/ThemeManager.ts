@@ -22,6 +22,10 @@ enum THEMES_NAMES {
 }
 
 class ThemeManager {
+  static getDefault(): THEMES_AVAILABLE {
+    return THEMES_AVAILABLE.LIGHT_THEME;
+  }
+
   static getThemeName(theme: THEMES_AVAILABLE): string {
     const themeTyped: string = theme.toString();
     return THEMES_NAMES[themeTyped as keyof typeof THEMES_NAMES];
@@ -30,10 +34,6 @@ class ThemeManager {
   static getThemeValue(theme: THEMES_AVAILABLE): string {
     const themeTyped: string = theme.toString();
     return THEMES_VALUES[themeTyped as keyof typeof THEMES_VALUES];
-  }
-
-  static getDefault(): THEMES_AVAILABLE {
-    return THEMES_AVAILABLE.DARK_THEME;
   }
 
   static isThemeAvailable(themeValue: string) {

@@ -26,8 +26,8 @@
       "@design-system/*": ["./src/ui/design-system/*"],
       "@pages/*": ["./src/infra/routing/pages/*"],
       "@state/*": ["./src/infra/state/*"],
-      "@styles/*": ["./src/ui/static/styles/*"],
-      "@assets/*": ["./src/ui/static/assets/*"],
+      "@styles/*": ["./src/static/styles/*"],
+      "@icons/*": ["./src/static/icons/*"],
     }
   },
   "include": [

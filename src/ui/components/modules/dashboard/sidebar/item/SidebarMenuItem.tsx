@@ -34,7 +34,7 @@ const SidebarMenuItem: React.FC<Props> = (props: Props) => {
         href={`${CustomValidator.isValueValid(props.link) ? props.link : ""}`}
         className="c-sidebar__nav-link"
       >
-        {props.icon}
+        <div>{props.icon}</div>
         <span className="c-sidebar-item__title">{props.title}</span>
       </a>
     </li>

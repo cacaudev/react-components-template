@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
-import { HomeIcon } from "@assets/icons/svg/Home";
-import { AnalyticsIcon } from "@assets/icons/svg/Analytics";
-import { CRMIcon } from "@assets/icons/svg/CRM";
-import { ProjectsIcon } from "@assets/icons/svg/Projects";
+import { Home, Analytics, CRM, Projects} from "@icons/svg";
 import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
 
 const menuItems: {
@@ -15,22 +12,22 @@ const menuItems: {
 }[] = [
   {
     title: "Dashboard",
-    icon: <HomeIcon />,
+    icon: <Home className="c-sidebar-item__icon" />,
     link: "",
   },
   {
     title: "Analytics",
-    icon: <AnalyticsIcon />,
+    icon: <Analytics className="c-sidebar-item__icon" />,
     link: "",
   },
   {
     title: "CRM",
-    icon: <CRMIcon />,
+    icon: <CRM className="c-sidebar-item__icon" />,
     link: "",
   },
   {
     title: "Projects",
-    icon: <ProjectsIcon />,
+    icon: <Projects className="c-sidebar-item__icon" />,
     link: "",
   },
 ];
