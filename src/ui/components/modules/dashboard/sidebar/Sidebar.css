@@ -1,7 +1,7 @@
 .c-sidebar {
   padding: var(--page-content-padding);
   padding-bottom: calc(var(--footer-height) + 1.5rem);
-  background-color: var(--bg-secondary);
+  background-color: var(--sidebar-bg);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 100%;
   display: flex;

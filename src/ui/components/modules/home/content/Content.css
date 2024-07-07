@@ -1,6 +1,6 @@
 .c-home__main-content {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-item-color);
   padding: var(--page-content-padding);
   height: inherit;
 }

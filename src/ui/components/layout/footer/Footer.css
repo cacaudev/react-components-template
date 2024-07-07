@@ -1,7 +1,7 @@
 .l-page__footer {
   height: var(--footer-height);
   padding: var(--page-content-padding);
-  background-color: cadetblue;
+  background-color: var(--topbar-bg);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

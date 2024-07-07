@@ -1,9 +1,9 @@
 import React from "react";
 import { SidebarMenuItem } from "../item/SidebarMenuItem";
-import { Logout, Theme } from "@icons/svg";
+import { DarkTheme, LightTheme, Logout } from "@icons/svg";
 import "./SidebarMenuBottom.css";
 import { useThemeContext } from "@state/context/ThemeContext";
-import { ThemeManager } from "@domain/style/ThemeManager";
+import { ThemeManager, THEMES_AVAILABLE } from "@domain/style/ThemeManager";
 
 const SidebarMenuBottom: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();
@@ -14,13 +14,18 @@ const SidebarMenuBottom: React.FC = () => {
 
   const handleLogout = () => {
     console.log("handle logout");
-    
   };
 
   return (
     <ul className="c-sidebar__container">
       <SidebarMenuItem
-        icon={<Theme className="c-sidebar-item__icon" />}
+        icon={
+          theme == THEMES_AVAILABLE.DARK_THEME ? (
+            <LightTheme className="c-sidebar-item__icon" />
+          ) : (
+            <DarkTheme className="c-sidebar-item__icon" />
+          )
+        }
         title={ThemeManager.getThemeName(theme)}
         itemClickedCallback={handleToogleTheme}
       />

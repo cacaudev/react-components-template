@@ -3,7 +3,7 @@
   height: var(--header-height);
   position: fixed;
   top: 0;
-  background-color: var(--bg-navbar);
+  background-color: var(--topbar-bg);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   transition: all 0.25s ease-in-out;
   z-index: 1005;
@@ -26,15 +26,15 @@
   flex-direction: row;
   align-items: center;
   -webkit-box-align: center !important;
-  gap: 1rem;
+  gap: 1.4rem;
   justify-content: left;
   flex-wrap: nowrap;
 }
 
 .c-topnavbar__icon {
-  fill: var(--text-primary);
-  width: 1.2em;
-  height: 1.2em;
+  fill: var(--topbar-item-color);
+  width: 1em;
+  height: 1em;
   cursor: pointer; 
   vertical-align: -0.2em;
 
@@ -44,8 +44,10 @@
 }
 
 .c-topnavbar__item {
-  color: var(--text-primary);
+  color: var(--topbar-item-color);
   text-decoration: none;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
 }
 
 .c-topnavbar__right-content {

@@ -11,6 +11,7 @@ module.exports = {
       "@state": path.resolve(__dirname, "./src/infra/state"),
       "@styles": path.resolve(__dirname, "./src/static/styles"),
       "@icons": path.resolve(__dirname, "./src/static/icons"),
+      "@img": path.resolve(__dirname, "./src/static/img"),
     },
     configure: (config, { env, paths }) => {
       config.module.rules.push({

@@ -28,6 +28,7 @@
       "@state/*": ["./src/infra/state/*"],
       "@styles/*": ["./src/static/styles/*"],
       "@icons/*": ["./src/static/icons/*"],
+      "@img/*": ["./src/static/img/*"],
     }
   },
   "include": [

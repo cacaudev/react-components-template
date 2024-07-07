@@ -5,4 +5,6 @@ export { ReactComponent as Home } from "./Home.svg";
 export { ReactComponent as Logout } from "./Logout.svg";
 export { ReactComponent as Notification } from "./Notification.svg";
 export { ReactComponent as Projects } from "./Projects.svg";
-export { ReactComponent as Theme } from "./Theme.svg";
+export { ReactComponent as LightTheme } from "./LightTheme.svg";
+export { ReactComponent as DarkTheme } from "./DarkTheme.svg";
+export { ReactComponent as Bars } from "./Bars.svg";

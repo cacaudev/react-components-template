@@ -1,6 +1,6 @@
 .c-dashboard__main-content {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--body-bg);
+  color: var(--body-color);
   padding: var(--page-content-padding);
   margin-left: 0px;
   width: 100%;
