@@ -15,9 +15,9 @@
   --sidebar-bg-light: #3a444e;
   --sidebar-item-color-light: #8391a2;
   --sidebar-item-hover-color-light: #343a40;
-  --sidebar-item-hover-bg-color-light: #bccee4;
+  --sidebar-item-hover-bg-color-light:#ffffff;
   --sidebar-item-active-color-light: #343a40;
-  --sidebar-item-active-bg-light: #ffffff;
+  --sidebar-item-active-bg-light:  #bccee4; 
 }
 
 .light-theme {

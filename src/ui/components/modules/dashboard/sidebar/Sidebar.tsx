@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
-import { Home, Analytics, CRM, Projects} from "@icons/svg";
+import { Home, Analytics, CRM, Projects, ChevronLeft, ChevronRight } from "@icons/svg";
 import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
 
 const menuItems: {
@@ -34,7 +34,7 @@ const menuItems: {
 
 const DashboardSidebar: React.FC = () => {
   const [active, setActive] = useState("Dashboard");
-  const { setSidebarToggle } = useSidebarContext();
+  const { isSidebarCollapsed, setSidebarToggle } = useSidebarContext();
 
   const handleSidebar = () => {
     setSidebarToggle();
@@ -46,7 +46,13 @@ const DashboardSidebar: React.FC = () => {
   return (
     <aside className={"c-sidebar"}>
       <div className="c-sidebar__header">
-        <button onClick={handleSidebar}>Toggle</button>
+        <a onClick={handleSidebar}>
+          {isSidebarCollapsed ? (
+            <ChevronRight className="c-sidebar__toggle-button" />
+          ) : (
+            <ChevronLeft className="c-sidebar__toggle-button" />
+          )}
+        </a>
       </div>
       <div className="c-sidebar__menu">
         <SidebarMenuTop menuItems={menuItems} />

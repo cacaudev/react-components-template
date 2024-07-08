@@ -10,15 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
   list-style-type: none;
   gap: 10px;
   overflow-y: auto;
   cursor: pointer;
   width: auto;
   overflow-x: hidden;
-
-  &.top {
-    margin-top: 40px;
-  }
 }

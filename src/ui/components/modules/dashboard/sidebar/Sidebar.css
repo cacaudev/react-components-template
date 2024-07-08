@@ -10,7 +10,7 @@
   left: 0;
   transition: all 0.3s ease;
   position: fixed;
-  z-index: 1001;
+  z-index: 100;
 }
 
 .c-sidebar--open .c-sidebar {
@@ -23,6 +23,8 @@
 
 .c-sidebar__header {
   position: relative;
+  height: 3rem;
+  width: inherit;
 }
 
 .l-page .c-sidebar .c-sidebar--collapsed {
@@ -30,9 +32,15 @@
   width: var(--left-sidebar-width-sm);
 }
 
-/* desktop breakpoint */
-@media (min-width: 1024px) {
-  .c-sidebar {
-    overflow-y: auto; /* can scroll */
-  }
+.c-sidebar__toggle-button {
+  position: absolute;
+  cursor: pointer;
+  right: -1em;
+  height: 2em;
+  width: 2em;
+  vertical-align: -0.2em;
+  fill: #39AFD1;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: #3a444e;
 }

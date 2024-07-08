@@ -33,8 +33,8 @@
 
 .c-topnavbar__icon {
   fill: var(--topbar-item-color);
-  width: 1em;
-  height: 1em;
+  width: 1.2em;
+  height: 1.2em;
   cursor: pointer; 
   vertical-align: -0.2em;
 

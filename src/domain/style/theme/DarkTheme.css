@@ -15,9 +15,9 @@
     --sidebar-bg-dark: #3a444e;
     --sidebar-item-color-dark: #8391a2;
     --sidebar-item-hover-color-dark: #343a40;
-    --sidebar-item-hover-bg-color-dark :#bccee4;
+    --sidebar-item-hover-bg-color-dark :#ffffff;
     --sidebar-item-active-color-dark: #343a40;
-    --sidebar-item-active-bg-dark: #ffffff;
+    --sidebar-item-active-bg-dark:#bccee4; 
   }
   .dark-theme {
     --text-primary: var(--text-primary-dark);

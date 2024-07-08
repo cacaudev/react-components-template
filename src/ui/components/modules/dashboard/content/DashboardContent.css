@@ -6,7 +6,7 @@
   width: 100%;
   transition: all 0.3s ease;
   overflow-y: auto;
-  position: relative;
+  position: inherit;
   height: inherit;
 }
 

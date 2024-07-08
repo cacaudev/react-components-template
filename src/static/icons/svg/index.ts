@@ -8,3 +8,5 @@ export { ReactComponent as Projects } from "./Projects.svg";
 export { ReactComponent as LightTheme } from "./LightTheme.svg";
 export { ReactComponent as DarkTheme } from "./DarkTheme.svg";
 export { ReactComponent as Bars } from "./Bars.svg";
+export { ReactComponent as ChevronRight } from "./circle-chevron-right-solid.svg";
+export { ReactComponent as ChevronLeft } from "./circle-chevron-left-solid.svg";
