@@ -7,20 +7,13 @@ import { useThemeContext } from "@state/context/ThemeContext";
 
 import { Home } from "@pages/home/Home";
 import { Dashboard } from "@pages/dashboard/Dashboard";
-import { Theme } from "@domain/contexts/support/theme/Theme";
 
 function App() {
   const { isSidebarCollapsed } = useSidebarContext();
   const { theme } = useThemeContext();
 
-  const geThemeValue = (): string => {
-    const aTheme = new Theme();
-    aTheme.setTheme(theme);
-    return aTheme.getThemeValue();
-  };
-
   return (
-    <div className={`App ${geThemeValue()}`}>
+    <div className={`App ${theme.getThemeValue()}`}>
       <div
         className={`l-page 
           ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} 

@@ -17,13 +17,13 @@ const TopNavbar: React.FC = () => {
 
   const setLogo = () => {
     if (isSidebarCollapsed) {
-      if (theme === THEMES_AVAILABLE.DARK_THEME) {
+      if (theme.getTheme() === THEMES_AVAILABLE.DARK_THEME) {
         return LogoDarkSmall;
       } else {
         return LogoLightSmall;
       }
     } else {
-      if (theme === THEMES_AVAILABLE.DARK_THEME) {
+      if (theme.getTheme() === THEMES_AVAILABLE.DARK_THEME) {
         return LogoDark;
       } else {
         return LogoLight;
@@ -46,7 +46,7 @@ const TopNavbar: React.FC = () => {
         </div>
         <div className="c-topnavbar__right-content">
           <a onClick={handleToogleTheme}>
-            {theme == THEMES_AVAILABLE.DARK_THEME ? (
+            {theme.getTheme() == THEMES_AVAILABLE.DARK_THEME ? (
               <LightTheme className="c-topnavbar__icon" />
             ) : (
               <DarkTheme className="c-topnavbar__icon" />

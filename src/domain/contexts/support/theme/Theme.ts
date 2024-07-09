@@ -21,11 +21,28 @@ enum THEMES_NAMES {
   LIGHT_THEME = "Light Theme",
 }
 
-class Theme {
-  private theme: THEMES_AVAILABLE;
+const DEFAULT_THEME = THEMES_AVAILABLE.LIGHT_THEME;
 
-  constructor() {
-    this.theme = this.getDefault();
+class Theme {
+  private theme: THEMES_AVAILABLE = DEFAULT_THEME;
+
+  private constructor() {}
+
+  public static newDefault(): Theme {
+    return new Theme();
+  }
+
+  public static newTheme(theme: THEMES_AVAILABLE) {
+    const aTheme = new Theme();
+    aTheme.theme = Theme.sanitizeTheme(theme);
+    return aTheme;
+  }
+
+  private static isThemeAvailable(themeValue: string) {
+    const themesAvailable = Object.values(THEMES_AVAILABLE).map((item) =>
+      item.toString()
+    );
+    return themesAvailable.includes(themeValue);
   }
 
   /**
@@ -35,29 +52,21 @@ class Theme {
    * @param themeValue string
    * @returns THEMES
    */
-  sanitizeTheme(themeValue: THEMES_AVAILABLE | null): THEMES_AVAILABLE {
+  private static sanitizeTheme(themeValue: THEMES_AVAILABLE | null): THEMES_AVAILABLE {
     if (!CustomValidator.isStringValid(themeValue)) {
-      return this.getDefault();
+      return Theme.newDefault().getTheme();
     }
 
     let themeString = themeValue as string;
-    if (!this.isThemeAvailable(themeString)) {
-      return this.getDefault();
+    if (!Theme.isThemeAvailable(themeString)) {
+      return Theme.newDefault().getTheme();
     }
 
     return THEMES_AVAILABLE[themeString as keyof typeof THEMES_AVAILABLE];
   }
 
-  setTheme(theme: THEMES_AVAILABLE) {
-    this.theme = this.sanitizeTheme(theme);
-  }
-
   getTheme(): THEMES_AVAILABLE {
     return this.theme;
-  }
-
-  getDefault(): THEMES_AVAILABLE {
-    return THEMES_AVAILABLE.LIGHT_THEME;
   }
 
   getThemeName(): string {
@@ -68,13 +77,6 @@ class Theme {
   getThemeValue(): string {
     const themeTyped: string = this.theme.toString();
     return THEMES_VALUES[themeTyped as keyof typeof THEMES_VALUES];
-  }
-
-  isThemeAvailable(themeValue: string) {
-    const themesAvailable = Object.values(THEMES_AVAILABLE).map((item) =>
-      item.toString()
-    );
-    return themesAvailable.includes(themeValue);
   }
 }
 
