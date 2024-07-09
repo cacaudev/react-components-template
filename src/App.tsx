@@ -1,23 +1,30 @@
 import { Route, Routes } from "react-router-dom";
-import TopNavbar from "@layout/navbar/TopNavbar";
+import { TopNavbar } from "@global/layout/topNavbar/TopNavbar";
+
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
+import { useThemeContext } from "@state/context/ThemeContext";
+
 import { Home } from "@pages/home/Home";
 import { Dashboard } from "@pages/dashboard/Dashboard";
-import { useThemeContext } from "@state/context/ThemeContext";
-import { ThemeManager } from "@domain/style/ThemeManager";
+import { Theme } from "@domain/contexts/support/theme/Theme";
 
 function App() {
   const { isSidebarCollapsed } = useSidebarContext();
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
+
+  const geThemeValue = (): string => {
+    const aTheme = new Theme();
+    aTheme.setTheme(theme);
+    return aTheme.getThemeValue();
+  };
 
   return (
-    <div className={`App ${ThemeManager.getThemeValue(theme)}`}>
+    <div className={`App ${geThemeValue()}`}>
       <div
         className={`l-page 
           ${isSidebarCollapsed ? "c-sidebar--collapsed" : "c-sidebar--open"} 
-          ${useResponsiveWidth() < 768 ? 'hide-sidebar': ''}`
-        }
+          ${useResponsiveWidth() < 768 ? "hide-sidebar" : ""}`}
       >
         <TopNavbar />
         <div className="l-page__content">

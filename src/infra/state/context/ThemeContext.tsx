@@ -1,5 +1,5 @@
-import { ThemeManager, THEMES_AVAILABLE } from "@domain/style/ThemeManager";
-import { ThemeStorage } from "@state/storage/ThemeStorage";
+import { Theme, THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
+import { ThemeStorageHandlerComposer } from "@state/storage/ThemeStorage.composer";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface IThemeContext {
@@ -11,24 +11,24 @@ interface Props {
 }
 
 const ThemeContext = createContext<IThemeContext>({
-  theme: ThemeManager.getDefault(),
+  theme: new Theme().getDefault(),
   toggleTheme: () => {},
 });
 
-const defaultTheme = ThemeStorage.getCurrentTheme();
+const defaultTheme = ThemeStorageHandlerComposer.getCurrentTheme();
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState(defaultTheme);
 
   const handleThemeChange = (theme: THEMES_AVAILABLE) => {
-    ThemeStorage.setTheme(theme);
+    ThemeStorageHandlerComposer.setTheme(theme);
   };
 
   const toggleTheme = () => {
     let newTheme = theme;
-    if (theme == THEMES_AVAILABLE.DARK_THEME) {
+    if (theme === THEMES_AVAILABLE.DARK_THEME) {
       newTheme = THEMES_AVAILABLE.LIGHT_THEME;
-    } else if (theme == THEMES_AVAILABLE.LIGHT_THEME) {
+    } else if (theme === THEMES_AVAILABLE.LIGHT_THEME) {
       newTheme = THEMES_AVAILABLE.DARK_THEME;
     }
 
@@ -44,7 +44,7 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
    */
   useEffect(() => {
     handleThemeChange(theme);
-  }, []);
+  });
 
   return (
     <ThemeContext.Provider

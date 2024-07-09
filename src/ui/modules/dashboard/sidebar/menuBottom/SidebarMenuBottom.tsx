@@ -3,10 +3,16 @@ import { SidebarMenuItem } from "../item/SidebarMenuItem";
 import { DarkTheme, LightTheme, Logout } from "@icons/svg";
 import "./SidebarMenuBottom.css";
 import { useThemeContext } from "@state/context/ThemeContext";
-import { ThemeManager, THEMES_AVAILABLE } from "@domain/style/ThemeManager";
+import { Theme, THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
 
 const SidebarMenuBottom: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();
+
+  const getThemeTitle = (): string => {
+    const aTheme = new Theme();
+    aTheme.setTheme(theme);
+    return aTheme.getThemeName();
+  }
 
   const handleToogleTheme = () => {
     toggleTheme();
@@ -26,7 +32,7 @@ const SidebarMenuBottom: React.FC = () => {
             <DarkTheme className="c-sidebar-item__icon" />
           )
         }
-        title={ThemeManager.getThemeName(theme)}
+        title={getThemeTitle()}
         itemClickedCallback={handleToogleTheme}
       />
       <SidebarMenuItem

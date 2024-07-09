@@ -20,12 +20,21 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
+      /* Domain */
       "@domain/*": ["./src/domain/*"],
-      "@layout/*": ["./src/ui/components/layout/*"],
-      "@modules/*": ["./src/ui/components/modules/*"],
+
+      /* UI (User Interface */
+      "@global/*": ["./src/ui/global/*"],
+      "@modules/*": ["./src/ui/modules/*"],
+
+      /* Design System*/
       "@design-system/*": ["./src/ui/design-system/*"],
+
+      /* Infrastructure */
       "@pages/*": ["./src/infra/routing/pages/*"],
       "@state/*": ["./src/infra/state/*"],
+
+      /* Static Resources */
       "@styles/*": ["./src/static/styles/*"],
       "@icons/*": ["./src/static/icons/*"],
       "@img/*": ["./src/static/img/*"],

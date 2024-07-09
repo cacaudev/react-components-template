@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./TopNavbar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { useThemeContext } from "@state/context/ThemeContext";
-import { THEMES_AVAILABLE } from "@domain/style/ThemeManager";
 import { Bell, Bars, DarkTheme, LightTheme } from "@icons/svg";
 import { LogoLight, LogoDark, LogoLightSmall, LogoDarkSmall } from "@img/index";
+import { THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
 
 const TopNavbar: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();
@@ -71,4 +71,4 @@ const TopNavbar: React.FC = () => {
   );
 };
 
-export default TopNavbar;
+export { TopNavbar };

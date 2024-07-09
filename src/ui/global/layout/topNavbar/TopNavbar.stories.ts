@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Navbar from "./TopNavbar";
+import { TopNavbar } from "./TopNavbar";
 import {
   reactRouterParameters,
   withRouter,
@@ -8,7 +8,7 @@ import { Home } from "@pages/home/Home";
 
 const meta = {
   title: "Example/Navbar",
-  component: Navbar,
+  component: TopNavbar,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   decorators: [withRouter],
@@ -24,7 +24,7 @@ const meta = {
   },
   args: {
   },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof TopNavbar>;
 
 export default meta;
 type StoryNavbar = StoryObj<typeof meta>;
