@@ -29,7 +29,7 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
 
     if (theme.getTheme() === THEMES_AVAILABLE.DARK_THEME) {
       newTheme = Theme.newTheme(THEMES_AVAILABLE.LIGHT_THEME);
-    } else if (theme.getTheme() === THEMES_AVAILABLE.LIGHT_THEME) {
+    } else {
       newTheme = Theme.newTheme(THEMES_AVAILABLE.DARK_THEME);
     }
 

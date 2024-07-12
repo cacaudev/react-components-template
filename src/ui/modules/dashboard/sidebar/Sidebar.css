@@ -36,8 +36,9 @@
   position: absolute;
   cursor: pointer;
   right: -1em;
+  top: 1em;
   height: 2em;
-  width: 2em;
+  width: 2em;  
   vertical-align: -0.2em;
   fill: #39AFD1;
   border: 2px solid transparent;
