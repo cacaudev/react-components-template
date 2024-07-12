@@ -48,6 +48,7 @@
   text-decoration: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-600);
+  cursor: pointer;
 }
 
 .c-topnavbar__right-content {

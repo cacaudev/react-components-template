@@ -1,6 +1,6 @@
 import React from "react";
-import { RightSidebar } from "@modules/home/rightSidebar/RightSidebar";
-import { Content } from "@modules/home/content/Content";
+import { RightSidebar } from "@modules/Home/rightSidebar/RightSidebar";
+import { Content } from "@modules/Home/content/Content";
 import './Home.css';
 
 const Home: React.FC = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { SidebarMenuItem } from "../item/SidebarMenuItem";
-import { DarkTheme, LightTheme, Logout } from "@icons/svg";
+import { DarkThemeIcon, LightThemeIcon, LogoutIcon } from "@icons/svg";
 import "./SidebarMenuBottom.css";
 import { useThemeContext } from "@state/context/ThemeContext";
 import { THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
@@ -21,16 +21,16 @@ const SidebarMenuBottom: React.FC = () => {
       <SidebarMenuItem
         icon={
           theme.getTheme() === THEMES_AVAILABLE.DARK_THEME ? (
-            <LightTheme className="c-sidebar-item__icon" />
+            <LightThemeIcon className="c-sidebar-item__icon" />
           ) : (
-            <DarkTheme className="c-sidebar-item__icon" />
+            <DarkThemeIcon className="c-sidebar-item__icon" />
           )
         }
         title={theme.getThemeName()}
         itemClickedCallback={handleToogleTheme}
       />
       <SidebarMenuItem
-        icon={<Logout className="c-sidebar-item__icon" />}
+        icon={<LogoutIcon className="c-sidebar-item__icon" />}
         title={"Logout"}
         itemClickedCallback={handleLogout}
       />

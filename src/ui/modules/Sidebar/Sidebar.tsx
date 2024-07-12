@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
+import {
+  AnalyticsIcon,
+  CRMIcon,
+  ProjectsIcon,
+  HomeIcon,
+  ChevronRightIcon,
+  ChevronLeftIcon,
+} from "@icons/svg";
 import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
-import { Home, Analytics, CRM, Projects, ChevronLeft, ChevronRight } from "@icons/svg";
 import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
 
 const menuItems: {
@@ -12,23 +19,23 @@ const menuItems: {
 }[] = [
   {
     title: "Dashboard",
-    icon: <Home className="c-sidebar-item__icon" />,
-    link: "",
+    icon: <HomeIcon className="c-sidebar-item__icon" />,
+    link: "index",
   },
   {
     title: "Analytics",
-    icon: <Analytics className="c-sidebar-item__icon" />,
-    link: "",
+    icon: <AnalyticsIcon className="c-sidebar-item__icon" />,
+    link: "analytics",
   },
   {
     title: "CRM",
-    icon: <CRM className="c-sidebar-item__icon" />,
-    link: "",
+    icon: <CRMIcon className="c-sidebar-item__icon" />,
+    link: "crm",
   },
   {
     title: "Projects",
-    icon: <Projects className="c-sidebar-item__icon" />,
-    link: "",
+    icon: <ProjectsIcon className="c-sidebar-item__icon" />,
+    link: "projects",
   },
 ];
 
@@ -48,9 +55,9 @@ const DashboardSidebar: React.FC = () => {
       <div className="c-sidebar__header">
         <a onClick={handleSidebar}>
           {isSidebarCollapsed ? (
-            <ChevronRight className="c-sidebar__toggle-button" />
+            <ChevronRightIcon className="c-sidebar__toggle-button" />
           ) : (
-            <ChevronLeft className="c-sidebar__toggle-button" />
+            <ChevronLeftIcon className="c-sidebar__toggle-button" />
           )}
         </a>
       </div>

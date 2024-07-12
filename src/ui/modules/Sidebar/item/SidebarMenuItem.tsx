@@ -2,15 +2,18 @@ import React, { useEffect } from "react";
 import "./SidebarMenuItem.css";
 import { CustomValidator } from "@domain/utils/CustomValidator";
 
-interface Props {
+interface ISidebarItemProps {
   icon: React.ReactNode;
   isActive?: boolean;
   title: string;
   link?: string;
-  itemClickedCallback(itemTitle: string): void;
+  itemClickedCallback(item:  {
+    title: string;
+    link?: string;
+  }): void;
 }
 
-const SidebarMenuItem: React.FC<Props> = (props: Props) => {
+const SidebarMenuItem: React.FC<ISidebarItemProps> = (props: ISidebarItemProps) => {
   useEffect(() => {
     if (!CustomValidator.isValueValid(props.icon)) {
       throw new Error("SidebarMenuItem: icon component required");
@@ -20,23 +23,23 @@ const SidebarMenuItem: React.FC<Props> = (props: Props) => {
     }
   }, [props]);
 
-  const handleClick = (e: any, itemTitle: string) => {
+  const handleClick = (e: any, item: {
+    title: string;
+    link?: string;
+  }) => {
     e.preventDefault();
-    props.itemClickedCallback(itemTitle);
+    props.itemClickedCallback(item);
   };
 
   return (
     <li
-      className={`c-sidebar__nav-item ${props.isActive ? "c-sidebar-item--is-active": ""}`}
-      onClick={(e) => handleClick(e, props.title)}
+      className={`c-sidebar__item ${props.isActive ? "c-sidebar-item--is-active" : ""}`}
+      onClick={(e) => handleClick(e, props)}
     >
-      <a
-        href={`${CustomValidator.isValueValid(props.link) ? props.link : ""}`}
-        className="c-sidebar__nav-link"
-      >
+      <div className="c-sidebar__item__content">
         <div>{props.icon}</div>
         <span className="c-sidebar-item__title">{props.title}</span>
-      </a>
+      </div>
     </li>
   );
 };

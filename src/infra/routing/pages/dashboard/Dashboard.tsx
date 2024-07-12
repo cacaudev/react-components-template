@@ -1,13 +1,13 @@
 import React from "react";
-import { DashboardSidebar } from "@modules/dashboard/sidebar/Sidebar";
-import { DashboardContent } from "@modules/dashboard/content/DashboardContent";
+import { DashboardSidebar } from "@modules/Sidebar/Sidebar";
+import { DashboardLayout } from "@modules/Dashboards/layout/DashboardLayout";
 import "./Dashboard.css";
 
 const Dashboard: React.FC = () => {
   return (
     <main className={`c-dashboard`}>
       <DashboardSidebar />
-      <DashboardContent />
+      <DashboardLayout />
     </main>
   );
 };

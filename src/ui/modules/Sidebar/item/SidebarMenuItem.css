@@ -1,27 +1,27 @@
-.c-sidebar__nav-item {
+.c-sidebar__item {
   width: 100%;
   padding: 10px 15px;
   border-radius: 4px;
+  text-decoration: none;
 }
-.c-sidebar-item--is-active.c-sidebar__nav-item {
+.c-sidebar-item--is-active.c-sidebar__item {
   background-color: var(--sidebar-item-active-bg);
 }
-.c-sidebar__nav-item:hover {
+.c-sidebar__item:hover {
   background-color: var(--sidebar-item-hover-bg-color);
 }
 
-.c-sidebar__nav-link {
+.c-sidebar__item__content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
   flex-wrap: nowrap;
-  gap: 15px;
-  text-decoration: none;
+  gap: 15px; 
   height: 20px;
   white-space: nowrap;
 }
-.c-sidebar--collapsed .c-sidebar__nav-link {
+.c-sidebar--collapsed .c-sidebar__item__content {
   overflow: hidden;
 }
 
@@ -34,7 +34,7 @@
   color: var(--sidebar-item-active-color);
   font-weight: var(--font-weight-600);
 }
-.c-sidebar__nav-item:hover .c-sidebar-item__title {
+.c-sidebar__item:hover .c-sidebar-item__title {
   color: var(--sidebar-item-hover-color);
   font-weight: var(--font-weight-600);
 }
@@ -51,6 +51,6 @@
 .c-sidebar-item--is-active .c-sidebar-item__icon {
   fill: var(--sidebar-item-active-color);
 }
-.c-sidebar__nav-item:hover .c-sidebar-item__icon {
+.c-sidebar__item:hover .c-sidebar-item__icon {
   fill: var(--sidebar-item-hover-color);
 }
