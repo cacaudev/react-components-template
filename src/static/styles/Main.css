@@ -1,7 +1,7 @@
 @import url("Base.css");
-@import url("../../domain/style/fonts/Fonts.css");
-@import url("../../domain/style/tokens/Tokens.css");
-@import url("../../domain/style/theme/Themes.css");
+@import url("../../core/style/fonts/Fonts.css");
+@import url("../../core/style/tokens/Tokens.css");
+@import url("../../core/style/theme/Themes.css");
 @import url("Breakpoints.css");
 @import url("Global.css");
 @import url("Transitions.css");

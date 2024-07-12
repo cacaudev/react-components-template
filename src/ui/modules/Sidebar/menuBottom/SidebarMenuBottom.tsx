@@ -1,9 +1,9 @@
 import React from "react";
 import { SidebarMenuItem } from "../item/SidebarMenuItem";
-import { DarkThemeIcon, LightThemeIcon, LogoutIcon } from "@icons/svg";
 import "./SidebarMenuBottom.css";
 import { useThemeContext } from "@state/context/ThemeContext";
-import { THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
+import { THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
+import { LightThemeIcon, DarkThemeIcon, LogoutIcon } from "@icons/svg/FontAwesome";
 
 const SidebarMenuBottom: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();

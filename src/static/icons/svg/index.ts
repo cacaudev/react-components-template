@@ -1,12 +1,1 @@
-export { ReactComponent as AnalyticsIcon } from "./Analytics.svg";
-export { ReactComponent as CRMIcon } from "./CRM.svg";
-export { ReactComponent as BellIcon } from "./Bell.svg";
-export { ReactComponent as HomeIcon } from "./Home.svg";
-export { ReactComponent as LogoutIcon } from "./Logout.svg";
-export { ReactComponent as NotificationIcon } from "./Notification.svg";
-export { ReactComponent as ProjectsIcon } from "./Projects.svg";
-export { ReactComponent as LightThemeIcon } from "./LightTheme.svg";
-export { ReactComponent as DarkThemeIcon } from "./DarkTheme.svg";
-export { ReactComponent as BarsIcon } from "./Bars.svg";
-export { ReactComponent as ChevronRightIcon } from "./circle-chevron-right-solid.svg";
-export { ReactComponent as ChevronLeftIcon } from "./circle-chevron-left-solid.svg";
+export * as FontAwesomeIcons from './FontAwesome';

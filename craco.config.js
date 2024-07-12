@@ -4,7 +4,7 @@ module.exports = {
   webpack: {
     alias: {
       /* Domain */
-      "@domain": path.resolve(__dirname, "./src/domain"),
+      "@domain": path.resolve(__dirname, "./src/core/domain"),
        /* UI (User Interface */
       "@global": path.resolve(__dirname, "./src/ui/global"),
       "@modules": path.resolve(__dirname, "./src/ui/modules"),

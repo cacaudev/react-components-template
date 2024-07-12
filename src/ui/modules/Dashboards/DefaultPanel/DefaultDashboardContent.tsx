@@ -1,9 +1,8 @@
 import React from "react";
-import "./DefaultDashboardContent.css";
 
 const DefaultDashboardContent: React.FC = () => {
   return (
-    <div className="c-dashboard__main">
+    <div>
       <h1>Dashboard Content</h1>
       <article className="c-article">
         <details>

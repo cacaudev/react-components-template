@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./TopNavbar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { useThemeContext } from "@state/context/ThemeContext";
-import { BellIcon, BarsIcon, DarkThemeIcon, LightThemeIcon } from "@icons/svg";
-import { LogoLight, LogoDark, LogoLightSmall, LogoDarkSmall } from "@img/index";
-import { THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
+import { THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
+import { LogoDark, LogoDarkSmall, LogoLight, LogoLightSmall } from "@img/logos";
+import { BarsIcon, BellIcon, DarkThemeIcon, LightThemeIcon } from "@icons/svg/FontAwesome";
 
 const TopNavbar: React.FC = () => {
   const navigateToPage = useNavigate();

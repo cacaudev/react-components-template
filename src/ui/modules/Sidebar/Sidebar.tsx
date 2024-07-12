@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
-import {
-  AnalyticsIcon,
-  CRMIcon,
-  ProjectsIcon,
-  HomeIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@icons/svg";
+
 import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
 import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
+import {
+  AnalyticsIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CRMIcon,
+  HomeIcon,
+  ProjectsIcon,
+} from "@icons/svg/FontAwesome";
 
 const menuItems: {
   title: string;

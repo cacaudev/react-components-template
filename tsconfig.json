@@ -21,7 +21,7 @@
     "jsx": "react-jsx",
     "paths": {
       /* Domain */
-      "@domain/*": ["./src/domain/*"],
+      "@domain/*": ["./src/core/domain/*"],
 
       /* UI (User Interface */
       "@global/*": ["./src/ui/global/*"],

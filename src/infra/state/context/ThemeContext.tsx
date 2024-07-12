@@ -1,4 +1,4 @@
-import { Theme, THEMES_AVAILABLE } from "@domain/contexts/support/theme/Theme";
+import { Theme, THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
 import { ThemeStorageHandlerComposer } from "@state/storage/ThemeStorage.composer";
 import { createContext, useContext, useEffect, useState } from "react";
 
