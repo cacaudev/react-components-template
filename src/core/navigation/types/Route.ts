@@ -1,5 +1,7 @@
+import ROUTES_AVAILABLE from "./EnumRoutes";
+
 interface IRoute {
-  name: string;
+  name: ROUTES_AVAILABLE;
   path: string;
   isProtected: boolean;
   description?: string;
@@ -7,7 +9,7 @@ interface IRoute {
 }
 
 class Route {
-  name = "";
+  name = ROUTES_AVAILABLE.HOME;
   path = "";
   isProtected = false;
   description = "";

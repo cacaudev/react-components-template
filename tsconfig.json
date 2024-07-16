@@ -20,8 +20,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      /* Domain */
+      /* Core Domain */
       "@domain/*": ["./src/core/domain/*"],
+
+       /* Core Navigation */
+      "@navigation/*": ["./src/core/navigation/*"],
 
       /* UI (User Interface */
       "@global/*": ["./src/ui/global/*"],

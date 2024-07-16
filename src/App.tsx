@@ -1,8 +1,8 @@
-import { TopNavbar } from "@global/layout/TopNavbar/TopNavbar";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { useThemeContext } from "@state/context/ThemeContext";
 import AppRoutes from "./infra/routing/routes/routes";
+import { TopNavbar } from "@global/layout/topNavbar/TopNavbar";
 
 function App() {
   const { isSidebarCollapsed } = useSidebarContext();
