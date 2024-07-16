@@ -10,14 +10,19 @@
   height: inherit;
 }
 
-.c-sidebar--collapsed .c-dashboard__container {
+.l-sidebar--collapsed .c-dashboard__container {
   margin-left: var(--left-sidebar-width-sm);
   width: calc(100% - var(--left-sidebar-width-sm));
 }
 
-.c-sidebar--open .c-dashboard__container {
+.l-sidebar--open .c-dashboard__container {
   margin-left: var(--left-sidebar-width);
   width: calc(100% - var(--left-sidebar-width));
+}
+
+.l-sidebar--hidden .c-dashboard__container {
+  margin-left: 0px;
+  width: 100%;
 }
 
 /* tablet breakpoint */

@@ -61,7 +61,7 @@
 
 /* tablet breakpoint */
 @media (max-width: 768px) {
-  .c-topnavbar__bars-icon {
+  .c-topnavbar__icon.bars {
     visibility: visible;
   }
 }

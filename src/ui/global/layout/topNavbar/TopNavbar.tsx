@@ -40,7 +40,7 @@ const TopNavbar: React.FC = () => {
             <img src={setLogo()} />
           </a>
           <a onClick={setSidebarToggle}>
-            <BarsIcon className="c-topnavbar__bars-icon" />
+            <BarsIcon className="c-topnavbar__icon bars" />
           </a>
         </div>
         <div className="c-topnavbar__right-content">
