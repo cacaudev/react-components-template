@@ -1,8 +1,11 @@
 .c-sidebar__item {
   width: 100%;
-  padding: 10px 15px;
+  height: 40px;
+  padding: 10px;
   border-radius: 4px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 .c-sidebar-item--is-active.c-sidebar__item {
   background-color: var(--sidebar-item-active-bg);
@@ -17,12 +20,13 @@
   align-items: center;
   justify-content: left;
   flex-wrap: nowrap;
-  gap: 15px; 
+  gap: 12px;
   height: 20px;
   white-space: nowrap;
 }
 .c-sidebar--collapsed .c-sidebar__item__content {
   overflow: hidden;
+  padding-left: 5px;
 }
 
 .c-sidebar-item__title {
@@ -44,9 +48,9 @@
 
 .c-sidebar-item__icon {
   fill: var(--sidebar-item-color);
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: -0.25em;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
 }
 .c-sidebar-item--is-active .c-sidebar-item__icon {
   fill: var(--sidebar-item-active-color);

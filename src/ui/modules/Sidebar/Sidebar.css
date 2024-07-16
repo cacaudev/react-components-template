@@ -1,5 +1,5 @@
 .c-sidebar {
-  padding: var(--page-content-padding);
+  padding: var(--left-sidebar-padding);
   padding-bottom: calc(var(--footer-height) + 1.5rem);
   background-color: var(--sidebar-bg);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -19,6 +19,8 @@
 
 .c-sidebar--collapsed .c-sidebar {
   width: var(--left-sidebar-width-sm);
+  padding: var(--left-sidebar-padding-sm);
+  padding-bottom: calc(var(--footer-height) + 1.5rem);
 }
 
 .c-sidebar__header {
@@ -35,10 +37,10 @@
 .c-sidebar__toggle-button {
   position: absolute;
   cursor: pointer;
-  right: -1em;
-  top: 1em;
-  height: 2em;
-  width: 2em;  
+  right: -0.6em;
+  top: 0em;
+  height: 1.5em;
+  width: 1.5em;  
   vertical-align: -0.2em;
   fill: #39AFD1;
   border: 2px solid transparent;
