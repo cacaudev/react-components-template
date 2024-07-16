@@ -19,8 +19,8 @@
   margin-left: var(--left-sidebar-width);
   width: calc(100% - var(--left-sidebar-width));
 }
-
-.l-sidebar--hidden .c-dashboard__container {
+/** For mobile and tablet screens sidebar is hidden */
+.l-tablet-screen .c-dashboard__container {
   margin-left: 0px;
   width: 100%;
 }

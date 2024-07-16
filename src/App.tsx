@@ -12,7 +12,7 @@ function App() {
     <div className={`App ${theme.getThemeValue()}`}>
       <div
         className={`l-page 
-          ${useResponsiveWidth() < 768 ? "l-sidebar--hidden" : ""} 
+          ${useResponsiveWidth() < 768 ? "l-tablet-screen" : ""} 
           ${isSidebarCollapsed ? "l-sidebar--collapsed" : "l-sidebar--open"}`}
       >
         <TopNavbar />
