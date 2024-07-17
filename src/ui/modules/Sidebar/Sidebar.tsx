@@ -12,6 +12,7 @@ import {
   HomeIcon,
   ProjectsIcon,
 } from "@icons/svg/FontAwesome";
+import { SidebarMenuItem } from "./item/SidebarMenuItem";
 
 const menuItems: {
   title: string;
@@ -63,6 +64,14 @@ const DashboardSidebar: React.FC = () => {
         </a>
       </div>
       <div className="c-sidebar__menu">
+        <SidebarMenuItem
+          icon={<HomeIcon className="c-sidebar-item__icon" />}
+          title={"Home"}
+          link={"../"}
+          itemClickedCallback={() => {}}
+          key={`sidebar-menu-home`}
+        />
+        <div className="c-sidebar__menu"></div>
         <SidebarMenuTop menuItems={menuItems} />
         <SidebarMenuBottom />
       </div>

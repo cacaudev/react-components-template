@@ -6,18 +6,21 @@ import { useThemeContext } from "@state/context/ThemeContext";
 import { THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
 import { LogoDark, LogoDarkSmall, LogoLight, LogoLightSmall } from "@img/logos";
 import { BarsIcon, BellIcon, DarkThemeIcon, LightThemeIcon } from "@icons/svg/FontAwesome";
+import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 
 const TopNavbar: React.FC = () => {
   const navigateToPage = useNavigate();
   const { theme, toggleTheme } = useThemeContext();
-  const { isSidebarCollapsed, setSidebarToggle } = useSidebarContext();
+  const { setSidebarToggle } = useSidebarContext();
 
   const handleToogleTheme = () => {
     toggleTheme();
   };
 
+  const isScreenTablet: boolean = useResponsiveWidth() < 768;
+
   const setLogo = () => {
-    if (isSidebarCollapsed) {
+    if (isScreenTablet) {
       if (theme.getTheme() === THEMES_AVAILABLE.DARK_THEME) {
         return LogoDarkSmall;
       } else {

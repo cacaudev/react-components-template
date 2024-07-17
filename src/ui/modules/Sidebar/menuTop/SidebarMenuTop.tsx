@@ -15,19 +15,12 @@ const SidebarMenuTop: React.FC<ISidebarMenuProps> = (
   props: ISidebarMenuProps
 ) => {
   const navigateToPage = useNavigate();
-  const [activeItem, setActiveItem] = useState(props.menuItems[0].title);
+  const [activeItem, setActiveItem] = useState(props.menuItems[1].title);
 
-  const handleItemSelection = (item: { title: string; link?: string }) => {
-    console.log("item ", item);
-    
+  const handleItemSelection = (item: { title: string; link?: string }) => {    
     setActiveItem(item.title);
-    if (item.link) {
-      console.log("has link... redirecting to ", item.link);
-      
+    if (item.link) {      
       navigateToPage(item.link);
-    } else {
-      console.log("has no link");
-      
     }
   };
 
