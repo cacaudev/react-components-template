@@ -4,7 +4,7 @@ import {
   reactRouterParameters,
   withRouter,
 } from "storybook-addon-remix-react-router";
-import { Home } from "@pages/home/Home";
+import { Home } from "@pages/Home";
 
 const meta = {
   title: "Example/Navbar",

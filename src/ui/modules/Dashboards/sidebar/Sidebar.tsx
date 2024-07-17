@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Sidebar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 
-import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
-import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
 import {
   AnalyticsIcon,
   ChevronLeftIcon,
@@ -13,6 +11,8 @@ import {
   ProjectsIcon,
 } from "@icons/svg/FontAwesome";
 import { SidebarMenuItem } from "./item/SidebarMenuItem";
+import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
+import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
 
 const menuItems: {
   title: string;
@@ -42,14 +42,10 @@ const menuItems: {
 ];
 
 const DashboardSidebar: React.FC = () => {
-  const [active, setActive] = useState("Dashboard");
   const { isSidebarCollapsed, setSidebarToggle } = useSidebarContext();
 
   const handleSidebar = () => {
     setSidebarToggle();
-  };
-  const handleNavItemActive = (nameNavItem: string) => {
-    setActive(nameNavItem);
   };
 
   return (
@@ -63,15 +59,14 @@ const DashboardSidebar: React.FC = () => {
           )}
         </a>
       </div>
+      <SidebarMenuItem
+        icon={<HomeIcon className="c-sidebar-item__icon" />}
+        title={"Home"}
+        link={"../"}
+        itemClickedCallback={() => {}}
+        key={`sidebar-menu-home`}
+      />
       <div className="c-sidebar__menu">
-        <SidebarMenuItem
-          icon={<HomeIcon className="c-sidebar-item__icon" />}
-          title={"Home"}
-          link={"../"}
-          itemClickedCallback={() => {}}
-          key={`sidebar-menu-home`}
-        />
-        <div className="c-sidebar__menu"></div>
         <SidebarMenuTop menuItems={menuItems} />
         <SidebarMenuBottom />
       </div>

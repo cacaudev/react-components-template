@@ -1,9 +1,0 @@
-.c-dashboard {
-  height: inherit;
-}
-/* tablet breakpoint */
-@media (max-width: 1024px) {
-  .c-dashboard {
-    overflow-y: auto; /* can scroll */
-  }
-}

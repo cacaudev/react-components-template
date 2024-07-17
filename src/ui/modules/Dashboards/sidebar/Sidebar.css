@@ -12,7 +12,7 @@
   position: fixed;
   z-index: 100;
 }
-.l-page .c-sidebar .l-sidebar--collapsed {
+.c-dashboard.l-sidebar--collapsed .c-sidebar  {
   position: absolute;
   width: var(--left-sidebar-width-sm);
 }
@@ -28,14 +28,13 @@
   opacity: 0;
   z-index: -1;
 }
-.l-tablet-screen.l-sidebar--open .c-sidebar {
+.l-tablet-screen .l-sidebar--open .c-sidebar {
   opacity: 1;
   z-index: 1000;
 }
 
 .c-sidebar__header {
   position: relative;
-  height: 3rem;
   width: inherit;
 }
 

@@ -1,11 +1,11 @@
-import { AnalyticsContent } from "@modules/Dashboards/Analytics/AnalyticsContent";
-import { CRMContent } from "@modules/Dashboards/CRM/CrmContent";
-import { DefaultDashboardContent } from "@modules/Dashboards/DefaultPanel/DefaultDashboardContent";
-import { ProjectsContent } from "@modules/Dashboards/Projects/ProjectsContent";
+import { AnalyticsContent } from "@modules/Dashboards/pages/Analytics/AnalyticsContent";
+import { CRMContent } from "@modules/Dashboards/pages/CRM/CrmContent";
+import { DefaultDashboardContent } from "@modules/Dashboards/pages/DefaultPanel/DefaultDashboardContent";
+import { ProjectsContent } from "@modules/Dashboards/pages/Projects/ProjectsContent";
 import { RoutesInformation } from "@navigation/index";
 import ROUTES_AVAILABLE from "@navigation/types/EnumRoutes";
-import { Dashboard } from "@pages/dashboard/Dashboard";
-import { Home } from "@pages/home/Home";
+import { Dashboard } from "@pages/Dashboard";
+import { Home } from "@pages/Home";
 import { Routes, Route } from "react-router-dom";
 
 const AppRoutes: React.FC = () => {

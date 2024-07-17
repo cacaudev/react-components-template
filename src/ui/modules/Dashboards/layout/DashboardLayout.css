@@ -1,34 +1,9 @@
-.c-dashboard__container {
-  background-color: var(--body-bg);
-  color: var(--body-color);
-  padding: calc(var(--page-content-padding) + 15px);
-  margin-left: 0px;
-  width: 100%;
-  transition: all 0.3s ease;
-  overflow-y: auto;
-  position: inherit;
+.c-dashboard {
   height: inherit;
 }
-
-.l-sidebar--collapsed .c-dashboard__container {
-  margin-left: var(--left-sidebar-width-sm);
-  width: calc(100% - var(--left-sidebar-width-sm));
-}
-
-.l-sidebar--open .c-dashboard__container {
-  margin-left: var(--left-sidebar-width);
-  width: calc(100% - var(--left-sidebar-width));
-}
-/** For mobile and tablet screens sidebar is hidden */
-.l-tablet-screen .c-dashboard__container {
-  margin-left: 0px;
-  width: 100%;
-}
-
 /* tablet breakpoint */
-@media (max-width: 768px) {
-  .c-dashboard__container {
-    overflow-x: hidden;
+@media (max-width: 1024px) {
+  .c-dashboard {
+    overflow-y: auto; /* can scroll */
   }
 }
-

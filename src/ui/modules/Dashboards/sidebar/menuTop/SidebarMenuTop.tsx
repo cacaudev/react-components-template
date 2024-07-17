@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { SidebarMenuItem } from "../item/SidebarMenuItem";
 import "./SidebarMenuTop.css";
 import { useNavigate } from "react-router-dom";
+import { SidebarMenuItem } from "../item/SidebarMenuItem";
 
 interface ISidebarMenuProps {
   menuItems: {
@@ -15,7 +15,7 @@ const SidebarMenuTop: React.FC<ISidebarMenuProps> = (
   props: ISidebarMenuProps
 ) => {
   const navigateToPage = useNavigate();
-  const [activeItem, setActiveItem] = useState(props.menuItems[1].title);
+  const [activeItem, setActiveItem] = useState(props.menuItems[0].title);
 
   const handleItemSelection = (item: { title: string; link?: string }) => {    
     setActiveItem(item.title);
