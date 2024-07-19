@@ -1,7 +1,7 @@
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { useThemeContext } from "@state/context/ThemeContext";
-import AppRoutes from "./infra/routing/routes/routes";
-import { TopNavbar } from "@global/layout/topNavbar/TopNavbar";
+import AppRoutes from "./infra/routes/routes";
+import { TopNavbar } from "./components/global/layout/TopNavbar/TopNavbar";
 
 function App() {
   const { theme } = useThemeContext();
