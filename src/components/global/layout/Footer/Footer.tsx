@@ -1,14 +1,13 @@
 import React from "react";
-import './Footer.css';
+import "./Footer.css";
 
 const Footer: React.FC = () => {
-    return (
-      <footer className="l-page__footer">
-        <p>Copywright Footer 2024</p>
-        <p>BottomRight</p>
-      </footer>
-    );
-  };
-  
-  export { Footer };
-  
+  return (
+    <div className="l-page__footer__content">
+      <p>Copywright Footer 2024</p>
+      <p>BottomRight</p>
+    </div>
+  );
+};
+
+export default Footer;

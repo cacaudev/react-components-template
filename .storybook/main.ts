@@ -28,12 +28,12 @@ module.exports = {
       /* Core Navigation */
       "@navigation": path.resolve(__dirname, "../src/core/navigation"),
       /* UI (User Interface */
-      "@global": path.resolve(__dirname, "../src/ui/global"),
-      "@modules": path.resolve(__dirname, "../src/ui/modules"),
+      "@global": path.resolve(__dirname, "../src/components/global"),
+      "@modules": path.resolve(__dirname, "../src/components/modules"),
       /* Design System*/
-      "@design-system": path.resolve(__dirname, "../src/ui/design-system"),
+      "@design-system": path.resolve(__dirname, "../src/design-system"),
       /* Infrastructure */
-      "@pages": path.resolve(__dirname, "../src/infra/routing/pages"),
+      "@pages": path.resolve(__dirname, "../src/components/pages"),
       "@state": path.resolve(__dirname, "../src/infra/state"),
       /* Static Resources */
       "@styles": path.resolve(__dirname, "../src/static/styles"),
