@@ -13,7 +13,6 @@
   z-index: 100;
 }
 .c-dashboard.l-sidebar--collapsed .c-sidebar  {
-  position: absolute;
   width: var(--left-sidebar-width-sm);
 }
 .l-sidebar--open .c-sidebar {
