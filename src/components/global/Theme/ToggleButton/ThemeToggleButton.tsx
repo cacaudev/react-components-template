@@ -5,7 +5,9 @@ interface IToggle {
   checked: boolean; // default is false
   onChange: (checked: boolean) => void;
 }
-
+/**
+ * Responsible for rendering theme toggle button
+ */
 const ThemeToggleButton: React.FC<IToggle> = ({ checked = false, onChange }) => {
   return (
     <label className="theme-toggle">

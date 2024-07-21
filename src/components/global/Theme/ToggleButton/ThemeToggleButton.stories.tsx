@@ -14,7 +14,7 @@ type StoryNavbar = StoryObj<typeof meta>;
 
 let defaultArgs = {
   checked: false,
-  onChange: (checked) => {}
+  onChange: (checked: boolean) => {}
 }
 
 export const Light: StoryNavbar = {
