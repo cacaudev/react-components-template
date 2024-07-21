@@ -1,5 +1,5 @@
 import { Theme, THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
-import { ThemeStorageHandlerComposer } from "../../localStorage/ThemeStorage.composer";
+import { ThemeStorageHandlerComposer } from "../../composers/localStorage/ThemeStorage.composer";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface IThemeContext {

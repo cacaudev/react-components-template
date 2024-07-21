@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@state/redux/store";
 import { toggleSidebar } from "../../state/SidebarSlice";
-import { SidebarBarsButton } from "./Buttons/SidebarBarsButton";
-import { SidebarChrevonButton } from "./Buttons/SidebarChrevonButton";
+import { SidebarBarsButton } from "./Buttons/Bars/SidebarBarsButton";
+import { SidebarChrevonButton } from "./Buttons/Chrevon/SidebarChrevonButton";
 
 interface ISidebarToggleManagerProps {
   buttonComponent: "bars" | "chevron";

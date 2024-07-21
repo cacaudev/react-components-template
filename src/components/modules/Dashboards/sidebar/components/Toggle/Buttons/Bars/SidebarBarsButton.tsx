@@ -1,6 +1,7 @@
 import React from "react";
 import { BarsIcon } from "@icons/svg/FontAwesome";
-import { ISidebarToggleButton } from "./ISidebarToggleButton";
+import { ISidebarToggleButton } from "../ISidebarToggleButton";
+import './SidebarBarsButton.css';
 
 /**
  * Responsible for rendering sidebar toggle button

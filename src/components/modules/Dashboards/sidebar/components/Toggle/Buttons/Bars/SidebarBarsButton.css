@@ -1,0 +1,10 @@
+.c-topnavbar__icon.bars {
+  visibility: hidden;
+}
+
+/* tablet breakpoint */
+@media (max-width: 768px) {
+  .c-topnavbar__icon.bars {
+    visibility: visible;
+  }
+}

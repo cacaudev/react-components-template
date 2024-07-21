@@ -1,0 +1,21 @@
+.c-sidebar__border-item {
+  position: relative;
+  width: inherit;
+}
+
+.c-sidebar__toggle-button {
+  position: absolute;
+  cursor: pointer;
+  right: -0.6em;
+  top: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: -0.2em;
+  fill: #39afd1;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: #3a444e;
+}
+.l-tablet-screen .c-sidebar__toggle-button {
+  visibility: hidden;
+}

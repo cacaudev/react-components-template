@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@icons/svg/FontAwesome";
-import { ISidebarToggleButton } from "./ISidebarToggleButton";
+import { ISidebarToggleButton } from "../ISidebarToggleButton";
+import "./SidebarChrevonButton.css"
 
 /**
  * Responsible for rendering sidebar toggle button
@@ -10,7 +11,7 @@ const SidebarChrevonButton: React.FC<ISidebarToggleButton> = ({
   onChange,
 }) => {
   return (
-    <div className="c-sidebar__toggle-button">
+    <div className="c-sidebar__border-item">
       <a onClick={() => onChange()}>
         {open ? (
           <ChevronRightIcon className="c-sidebar__toggle-button" />

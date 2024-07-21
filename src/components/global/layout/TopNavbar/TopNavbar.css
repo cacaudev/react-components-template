@@ -40,14 +40,10 @@
 
 .c-topnavbar__icon {
   fill: var(--topbar-item-color);
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.4em;
+  height: 1.4em;
   cursor: pointer; 
   vertical-align: -0.2em;
-
-  &.bars {
-    visibility: hidden;
-  }
 }
 
 .c-topnavbar__item {
@@ -63,11 +59,4 @@
   flex-direction: inherit;
   gap: inherit;
   align-items: inherit;
-}
-
-/* tablet breakpoint */
-@media (max-width: 768px) {
-  .c-topnavbar__icon.bars {
-    visibility: visible;
-  }
 }
