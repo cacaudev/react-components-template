@@ -1,42 +1,68 @@
 import React, { useState } from "react";
 import "./SidebarMenuTop.css";
 import { useNavigate } from "react-router-dom";
-import { SidebarMenuItem } from "../item/SidebarMenuItem";
+import {
+  HomeIcon,
+  AnalyticsIcon,
+  CRMIcon,
+  ProjectsIcon,
+} from "@icons/svg/FontAwesome";
+import { MenuItemProps, SidebarItemList } from "./SidebarItemList";
+import { ScreenManager } from "@state/hooks/screen/ScreenManager";
+import { toggleSidebar } from "../../state/SidebarSlice";
+import { useDispatch } from "react-redux";
 
-interface ISidebarMenuProps {
-  menuItems: {
-    title: string;
-    icon: React.ReactNode;
-    link: string;
-  }[];
-}
+const menuItems: MenuItemProps[] = [
+  {
+    title: "Dashboard",
+    icon: <HomeIcon className="c-sidebar-item__icon" />,
+    link: "index",
+  },
+  {
+    title: "Analytics",
+    icon: <AnalyticsIcon className="c-sidebar-item__icon" />,
+    link: "analytics",
+  },
+  {
+    title: "CRM",
+    icon: <CRMIcon className="c-sidebar-item__icon" />,
+    link: "crm",
+  },
+  {
+    title: "Projects",
+    icon: <ProjectsIcon className="c-sidebar-item__icon" />,
+    link: "projects",
+  },
+];
 
-const SidebarMenuTop: React.FC<ISidebarMenuProps> = (
-  props: ISidebarMenuProps
-) => {
+const SidebarMenuTop: React.FC = () => {
   const navigateToPage = useNavigate();
-  const [activeItem, setActiveItem] = useState(props.menuItems[0].title);
+  const dispatch = useDispatch();
 
-  const handleItemSelection = (item: { title: string; link?: string }) => {    
+  const [activeItem, setActiveItem] = useState(menuItems[0].title);
+  const { isTablet } = ScreenManager();
+
+  const shouldCloseSidebarAfterClickingItem = () => isTablet;
+  const closeSidebar = () => {
+    dispatch(toggleSidebar());
+  };
+
+  const handleItemSelection = (item: { title: string; link?: string }) => {
     setActiveItem(item.title);
-    if (item.link) {      
+    if (item.link) {
       navigateToPage(item.link);
+      if (shouldCloseSidebarAfterClickingItem()) {
+        closeSidebar();
+      }
     }
   };
 
   return (
-    <ul className="c-sidebar__container top">
-      {props.menuItems.map((item, index) => (
-        <SidebarMenuItem
-          icon={item.icon}
-          isActive={activeItem === item.title}
-          title={item.title}
-          link={item.link}
-          itemClickedCallback={handleItemSelection}
-          key={`sidebar-menu-${index}`}
-        />
-      ))}
-    </ul>
+    <SidebarItemList
+      menuItems={menuItems}
+      activeItem={activeItem}
+      onChangeActive={handleItemSelection}
+    />
   );
 };
 

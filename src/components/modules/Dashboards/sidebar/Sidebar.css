@@ -32,7 +32,7 @@
   z-index: 1000;
 }
 
-.c-sidebar__header {
+.c-sidebar__toggle-button {
   position: relative;
   width: inherit;
 }

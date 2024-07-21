@@ -5,7 +5,6 @@ import { SidebarMenuItem } from "../item/SidebarMenuItem";
 
 const SidebarMenuBottom: React.FC = () => {
   const handleLogout = () => {
-    console.log("handle logout");
   };
 
   return (

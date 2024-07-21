@@ -10,7 +10,7 @@ const SidebarChrevonButton: React.FC<ISidebarToggleButton> = ({
   onChange,
 }) => {
   return (
-    <div className="c-sidebar__header">
+    <div className="c-sidebar__toggle-button">
       <a onClick={() => onChange()}>
         {open ? (
           <ChevronRightIcon className="c-sidebar__toggle-button" />

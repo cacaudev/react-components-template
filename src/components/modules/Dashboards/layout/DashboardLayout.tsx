@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { DashboardSidebar } from "@modules/Dashboards/sidebar/components/Sidebar";
+import { DashboardSidebar } from "@modules/Dashboards/sidebar/Sidebar";
 import { DashboardContent } from "@modules/Dashboards/content/DashboardContent";
 import "./DashboardLayout.css";
 import { RootState } from "@state/redux/store";

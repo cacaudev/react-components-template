@@ -10,25 +10,32 @@
 }
 
 .c-topnavbar__container {
-  display: flex;
+  width: inherit;
   height: inherit;
+  display: flex;
+
+  flex-wrap: nowrap;
   flex-direction: row;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
+
   padding: var(--page-content-padding);
   margin: 0 auto;
+
   -webkit-box-pack: justify;
   -webkit-box-align: center;
+  -webkit-box-align: center !important;
 }
 
 .c-topnavbar__left-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  -webkit-box-align: center !important;
+  display: inherit;
+  flex-direction: inherit;
+  gap: inherit;
+  align-items: inherit;
+
   gap: 1.4rem;
   justify-content: left;
-  flex-wrap: nowrap;
 }
 
 .c-topnavbar__icon {
@@ -52,11 +59,10 @@
 }
 
 .c-topnavbar__right-content {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  -webkit-box-align: center !important;
+  display: inherit;
+  flex-direction: inherit;
+  gap: inherit;
+  align-items: inherit;
 }
 
 /* tablet breakpoint */
