@@ -7,8 +7,7 @@ import { LogoDark, LogoDarkSmall, LogoLight, LogoLightSmall } from "@img/logos";
 import { BarsIcon, BellIcon } from "@icons/svg/FontAwesome";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { ThemeManager } from "@global/Theme/Switch/ThemeManager";
-import { RootState } from "@state/redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleSidebar } from "@modules/Dashboards/sidebar/state/SidebarSlice";
 
 const TopNavbar: React.FC = () => {

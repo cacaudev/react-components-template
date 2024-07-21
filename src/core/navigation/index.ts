@@ -13,9 +13,9 @@ class RoutesInformation {
     }
     const routeFound = RoutesInformation.ROUTES.filter(
       (route: Route) =>
-        route.name == routeName
+        route.name === routeName
     );
-    if (!routeFound || routeFound.length == 0) {
+    if (!routeFound || routeFound.length === 0) {
       throw new Error("Route not found.");
     }
     if (!routeFound || routeFound.length > 1) {
