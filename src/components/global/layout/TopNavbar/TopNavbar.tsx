@@ -1,22 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TopNavbar.css";
 import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { useThemeContext } from "@state/context/ThemeContext";
 import { THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
 import { LogoDark, LogoDarkSmall, LogoLight, LogoLightSmall } from "@img/logos";
-import { BarsIcon, BellIcon, DarkThemeIcon, LightThemeIcon } from "@icons/svg/FontAwesome";
+import { BarsIcon, BellIcon } from "@icons/svg/FontAwesome";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
+import { ThemeManager } from "@global/Theme/Switch/ThemeManager";
 
 const TopNavbar: React.FC = () => {
   const navigateToPage = useNavigate();
-  const { theme, toggleTheme } = useThemeContext();
+  const { theme } = useThemeContext();
   const { setSidebarToggle } = useSidebarContext();
-
-  const handleToogleTheme = () => {
-    toggleTheme();
-  };
-
   const isScreenTablet: boolean = useResponsiveWidth() < 768;
 
   const setLogo = () => {
@@ -47,13 +43,7 @@ const TopNavbar: React.FC = () => {
           </a>
         </div>
         <div className="c-topnavbar__right-content">
-          <a onClick={handleToogleTheme}>
-            {theme.getTheme() == THEMES_AVAILABLE.DARK_THEME ? (
-              <LightThemeIcon className="c-topnavbar__icon" />
-            ) : (
-              <DarkThemeIcon className="c-topnavbar__icon" />
-            )}
-          </a>
+          <ThemeManager />
           <div>
             <BellIcon className="c-topnavbar__icon" />
           </div>

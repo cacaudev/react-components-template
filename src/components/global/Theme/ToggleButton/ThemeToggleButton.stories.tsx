@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeSwitch } from "./ThemeSwitch";
+import { ThemeToggleButton } from "./ThemeToggleButton";
 
 const meta = {
-  title: "UI/Theme Switch",
-  component: ThemeSwitch,
+  title: "UI/Theme Toggle",
+  component: ThemeToggleButton,
   tags: ["autodocs"],  
   args: {
   },
-} satisfies Meta<typeof ThemeSwitch>;
+} satisfies Meta<typeof ThemeToggleButton>;
 
 export default meta;
 type StoryNavbar = StoryObj<typeof meta>;

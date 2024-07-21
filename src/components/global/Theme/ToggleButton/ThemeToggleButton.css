@@ -1,5 +1,5 @@
 /* The switch - the box around the slider */
-.theme-switch {
+.theme-toggle {
   font-size: 17px;
   position: relative;
   width: 60px;
@@ -12,7 +12,7 @@
   display: block;
 }
 
-.theme-switch .moon svg {
+.theme-toggle .moon svg {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -24,7 +24,7 @@
   display: block;
 }
 
-.theme-switch .sun svg {
+.theme-toggle .sun svg {
   position: absolute;
   top: 6px;
   right: 5px;
@@ -37,7 +37,7 @@
 }
 
 /* Hide default HTML checkbox */
-.theme-switch input {
+.theme-toggle input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -47,7 +47,7 @@
   position: absolute;
 }
 
-.theme-switch__slider {
+.theme-toggle__slider {
   background-color: #cecece;
   position: absolute;
   cursor: pointer;
@@ -56,11 +56,11 @@
   border-radius: 300px;
   border-style: none;
 }
-.theme-switch input:checked + .theme-switch__slider {
+.theme-toggle input:checked + .theme-toggle__slider {
   background-color:  #3a3a3a;
 }
 
-.theme-switch .theme-switch__slider:before {
+.theme-toggle .theme-toggle__slider:before {
   background: #f2f2f2;
   position: absolute;
   content: "";
@@ -72,7 +72,7 @@
   z-index: 2;
   transition: .4s;
 }
-.theme-switch input:checked + .theme-switch__slider:before {
+.theme-toggle input:checked + .theme-toggle__slider:before {
   transform: translate(29px);
   background: #f2f2f2;
 }
