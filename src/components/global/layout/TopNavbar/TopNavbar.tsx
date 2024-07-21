@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TopNavbar.css";
-import { useSidebarContext } from "@state/context/SidebarToggleContext";
 import { useThemeContext } from "@state/context/ThemeContext";
 import { THEMES_AVAILABLE } from "@domain/contexts/theme/Theme";
 import { LogoDark, LogoDarkSmall, LogoLight, LogoLightSmall } from "@img/logos";
 import { BarsIcon, BellIcon } from "@icons/svg/FontAwesome";
 import useResponsiveWidth from "@state/hooks/WindowDimensionsHook";
 import { ThemeManager } from "@global/Theme/Switch/ThemeManager";
+import { RootState } from "@state/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSidebar } from "@modules/Dashboards/sidebar/state/SidebarSlice";
 
 const TopNavbar: React.FC = () => {
   const navigateToPage = useNavigate();
+  const dispatch = useDispatch();
   const { theme } = useThemeContext();
-  const { setSidebarToggle } = useSidebarContext();
+
   const isScreenTablet: boolean = useResponsiveWidth() < 768;
+
+  const handleSidebarToggle = () => {
+    dispatch(toggleSidebar())
+  }
 
   const setLogo = () => {
     if (isScreenTablet) {
@@ -38,7 +45,7 @@ const TopNavbar: React.FC = () => {
           <a onClick={() => navigateToPage("/")}>
             <img src={setLogo()} />
           </a>
-          <a onClick={setSidebarToggle}>
+          <a onClick={handleSidebarToggle}>
             <BarsIcon className="c-topnavbar__icon bars" />
           </a>
         </div>

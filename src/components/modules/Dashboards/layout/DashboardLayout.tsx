@@ -1,13 +1,12 @@
 import React from "react";
-import { DashboardSidebar } from "@modules/Dashboards/sidebar/Sidebar";
+import { useSelector } from "react-redux";
+import { DashboardSidebar } from "@modules/Dashboards/sidebar/components/Sidebar";
 import { DashboardContent } from "@modules/Dashboards/content/DashboardContent";
 import "./DashboardLayout.css";
-import {
-  useSidebarContext,
-} from "@state/context/SidebarToggleContext";
+import { RootState } from "@state/redux/store";
 
 const DashboardLayout: React.FC = () => {
-  const { isSidebarCollapsed } = useSidebarContext();
+  const isSidebarCollapsed = useSelector((state: RootState) => state.sidebar.isSidebarCollapsed);
   return (
     <main className={`c-dashboard ${isSidebarCollapsed ? "l-sidebar--collapsed" : "l-sidebar--open"}`}>
       <DashboardSidebar />

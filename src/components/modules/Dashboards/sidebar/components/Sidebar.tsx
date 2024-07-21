@@ -1,7 +1,5 @@
 import React from "react";
-import "./Sidebar.css";
-import { useSidebarContext } from "@state/context/SidebarToggleContext";
-
+import { useSelector, useDispatch } from "react-redux";
 import {
   AnalyticsIcon,
   ChevronLeftIcon,
@@ -13,6 +11,10 @@ import {
 import { SidebarMenuItem } from "./item/SidebarMenuItem";
 import { SidebarMenuBottom } from "./menuBottom/SidebarMenuBottom";
 import { SidebarMenuTop } from "./menuTop/SidebarMenuTop";
+import { RootState } from "@state/redux/store";
+
+import { toggleSidebar } from "../state/SidebarSlice";
+import "./Sidebar.css";
 
 const menuItems: {
   title: string;
@@ -42,10 +44,13 @@ const menuItems: {
 ];
 
 const DashboardSidebar: React.FC = () => {
-  const { isSidebarCollapsed, setSidebarToggle } = useSidebarContext();
+  const isSidebarCollapsed = useSelector(
+    (state: RootState) => state.sidebar.isSidebarCollapsed
+  );
+  const dispatch = useDispatch();
 
   const handleSidebar = () => {
-    setSidebarToggle();
+    dispatch(toggleSidebar());
   };
 
   return (
