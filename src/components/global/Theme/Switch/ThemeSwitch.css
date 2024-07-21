@@ -57,7 +57,7 @@
   border-style: none;
 }
 .theme-switch input:checked + .theme-switch__slider {
-  background-color: #cecece;
+  background-color:  #3a3a3a;
 }
 
 .theme-switch .theme-switch__slider:before {

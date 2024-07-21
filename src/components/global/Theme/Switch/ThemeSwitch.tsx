@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./ThemeSwitch.css";
 
 interface IToggle {
-  checked: boolean;
+  checked: boolean; // default is false
   onChange: (checked: boolean) => void;
 }
 
-const ThemeSwitch: React.FC<IToggle> = ({ checked, onChange}) => {
-
+const ThemeSwitch: React.FC<IToggle> = ({ checked = false, onChange }) => {
   return (
     <label className="theme-switch">
       <div className="moon">
@@ -47,7 +46,10 @@ const ThemeSwitch: React.FC<IToggle> = ({ checked, onChange}) => {
         name="toggleSwitch"
         id="toggleSwitch"
         checked={checked}
-        onChange={(e) => onChange(e.data.checked)}
+        onChange={(e) => {
+          e.preventDefault();
+          onChange(e.target.checked)
+        }}
       />
       <div className="theme-switch__slider"></div>
     </label>

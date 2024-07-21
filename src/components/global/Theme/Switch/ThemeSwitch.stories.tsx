@@ -12,19 +12,19 @@ const meta = {
 export default meta;
 type StoryNavbar = StoryObj<typeof meta>;
 
-export const Dark: StoryNavbar = {
-  args: {
-    checked: false,
-    onChange: (checked: boolean) => {
-      console.log('Toggle it.')
-    }
-  }
-};
+let defaultArgs = {
+  checked: false,
+  onChange: (checked) => {}
+}
+
 export const Light: StoryNavbar = {
   args: {
-    checked: true,
-    onChange: (checked: boolean) => {
-      console.log('Toggle it.')
-    }
+    ...defaultArgs
+  }
+};
+export const Dark: StoryNavbar = {
+  args: {
+    ...defaultArgs,
+    checked: true
   }
 };
